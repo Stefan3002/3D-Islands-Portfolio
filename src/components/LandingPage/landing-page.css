@@ -34,4 +34,10 @@
   border: 1px solid #070F2B;
 }
 
+@media screen and (max-width: 1000px) {
+  .landing-page .wrapper {
+    max-width: 80%;
+  }
+}
+
 /*# sourceMappingURL=landing-page.css.map */

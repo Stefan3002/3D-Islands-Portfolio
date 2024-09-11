@@ -1,7 +1,7 @@
 import './skills-page.css'
 import Button from "../../Button/button.jsx";
-import ArrowUp from "../../../assets/svgs/arrow-up.svg";
-import scrollSVG from "../../../assets/svgs/scroll.svg";
+import ArrowUp from "../../../../public/svgs/arrow-up.svg";
+import scrollSVG from "../../../../public/svgs/scroll.svg";
 const SkillsPage = () => {
     const projects = [
         {

@@ -3,7 +3,7 @@ import './project-template-page.css'
 import projectImg from '../../../../public/imgs/Codelighthouse.png'
 import {useState} from "react";
 import LightBox from "../../LightBox/light-box.jsx";
-import closeSvg from "../../../assets/svgs/close.svg";
+import closeSvg from "../../../../public/svgs/close.svg";
 
 const ProjectTemplatePage = ({lastScroll, title, setProject, description, imgs}) => {
     const [lightBoxImg, setLightBoxImg] = useState(null)

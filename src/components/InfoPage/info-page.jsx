@@ -2,7 +2,7 @@ import './info-page.css'
 import './about-page.css'
 import './education-page.css'
 import Button from "../Button/button.jsx";
-import ArrowUp from '../../assets/svgs/arrow-up.svg'
+import ArrowUp from '../../../public/svgs/arrow-up.svg'
 import {useEffect} from "react";
 import ExperiencePage from "./ExperiencePage/experience-page.jsx";
 import ProjectsPage from "./ProjectsPage/projects-page.jsx";

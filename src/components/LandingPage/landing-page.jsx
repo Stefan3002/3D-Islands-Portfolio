@@ -1,7 +1,7 @@
 import './landing-page.css'
 import Button from "../Button/button.jsx";
-import darkSVG from '../../assets/svgs/darkSVG.svg'
-import sunSVG from '../../assets/svgs/sunSVG.svg'
+import darkSVG from '../../../public/svgs/darkSVG.svg'
+import sunSVG from '../../../public/svgs/sunSVG.svg'
 const LandingPage = ({night, setNight, setStarted}) => {
 
     const startJourney = () => {
@@ -11,6 +11,7 @@ const LandingPage = ({night, setNight, setStarted}) => {
         document.querySelectorAll('.scheme-option').forEach(el => {
             el.classList.add('fade-out')
         })
+        document.querySelector('body').style.minHeight = '200vh'
         setTimeout(() => setStarted(true), 400)
     }
 

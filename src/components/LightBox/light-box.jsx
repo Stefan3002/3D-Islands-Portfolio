@@ -1,5 +1,5 @@
 import './light-box.css'
-import closeSvg from '../../assets/svgs/close.svg'
+import closeSvg from '../../../public/svgs/close.svg'
 const LightBox = ({img, setLightBoxImg}) => {
     return (
         <div className="light-box">

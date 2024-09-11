@@ -1,5 +1,5 @@
 import './loading-screen.css'
-import loaderSVG from '../../assets/svgs/loader.svg'
+import loaderSVG from '../../../public/svgs/loader.svg'
 import {Html} from "@react-three/drei";
 const LoadingScreen = () => {
     return (

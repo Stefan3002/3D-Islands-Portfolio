@@ -1,7 +1,7 @@
 import './navigation.css'
 import {useEffect, useRef} from "react";
-import darkSVG from "../../assets/svgs/darkSVG.svg";
-import sunSVG from "../../assets/svgs/sunSVG.svg";
+import darkSVG from "../../../public/svgs/darkSVG.svg";
+import sunSVG from "../../../public/svgs/sunSVG.svg";
 const Navigation = ({night, setNight, page, setPage, scrollListener}) => {
     const menuItems = [
         'Presentation', 'Education', 'Experience', 'Projects', 'Skills', 'Legal'

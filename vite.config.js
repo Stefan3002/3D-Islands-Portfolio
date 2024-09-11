@@ -5,6 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.glb'],
-  publicDir: 'public',
-  base: '/opt/build/repo/'
+  publicDir: 'public'
 })
