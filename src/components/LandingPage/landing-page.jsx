@@ -8,6 +8,9 @@ const LandingPage = ({night, setNight, setStarted}) => {
         document.querySelector('.landing-title').classList.add('fade-out')
         document.querySelector('.landing-description').classList.add('fade-out')
         document.querySelector('.start-button').classList.add('fade-out')
+        document.querySelectorAll('.scheme-option').forEach(el => {
+            el.classList.add('fade-out')
+        })
         setTimeout(() => setStarted(true), 400)
     }
 

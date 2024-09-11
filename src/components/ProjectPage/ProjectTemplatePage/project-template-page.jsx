@@ -1,6 +1,6 @@
 import './project-template-page.css'
 
-import projectImg from '../../../assets/imgs/Codelighthouse.png'
+import projectImg from '../../../../public/imgs/Codelighthouse.png'
 import {useState} from "react";
 import LightBox from "../../LightBox/light-box.jsx";
 import closeSvg from "../../../assets/svgs/close.svg";

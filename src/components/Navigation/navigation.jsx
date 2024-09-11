@@ -24,10 +24,6 @@ const Navigation = ({night, setNight, page, setPage, scrollListener}) => {
         // document.querySelector('.info-page').classList.add('slide-left2')
     }
 
-    useEffect(() => {
-
-    }, []);
-
     return (
         <div className='navigation'>
             <ul>
