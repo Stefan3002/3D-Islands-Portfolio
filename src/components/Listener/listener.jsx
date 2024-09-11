@@ -32,14 +32,14 @@ const Listener = ({project, scrollHandlerRef, infoVisible, setInfoVisible, islan
     const nav = document.querySelector('.navigation')
 
     const mouseEnterHandler = () => {
-        document.querySelectorAll('.navigation ul li').forEach(el => {
+        document.querySelectorAll('.navigation ul').forEach(el => {
             if(el.classList.contains('hidden'))
                 el.classList.remove('hidden')
         })
     }
 
     const mouseExitHandler = () => {
-        document.querySelectorAll('.navigation ul li').forEach(el => {
+        document.querySelectorAll('.navigation ul').forEach(el => {
             if(!el.classList.contains('hidden'))
                 el.classList.add('hidden')
         })
@@ -48,19 +48,19 @@ const Listener = ({project, scrollHandlerRef, infoVisible, setInfoVisible, islan
     const scrollHandler = () => {
         const scrollY = window.scrollY
         const delta = scrollY - lastScrollY.current
+        const navUl = document.querySelector('.navigation ul')
         island.current.rotation.y += (delta * .0005)
 
         rotationSpeed.current += (delta * .001)
 
         lastScrollY.current = scrollY
 
+
+
         if(scrollY > 50) {
 
             // Remove the links from the navigation bar
-
-            document.querySelectorAll('.navigation ul li').forEach(el => {
-                el.classList.add('hidden')
-            })
+            navUl?.classList.add('hidden')
 
             nav.querySelector('.page-title').style.fontSize = '1.3rem'
 
@@ -126,11 +126,9 @@ const Listener = ({project, scrollHandlerRef, infoVisible, setInfoVisible, islan
             nav.removeEventListener('mouseleave', mouseExitHandler)
 
             // Add the links back to the navigation
-            console.log(project)
-            if(project === null)
-                document.querySelectorAll('.navigation ul li').forEach(el => {
-                    el.classList.remove('hidden')
-                })
+            if(project === null) {
+                navUl?.classList.remove('hidden')
+            }
 
 
             nav.style.top = 'unset'

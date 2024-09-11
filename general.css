@@ -61,8 +61,7 @@ button {
 }
 
 .hidden {
-  display: none;
-  visibility: hidden;
+  display: none !important;
 }
 
 .fade-out {
