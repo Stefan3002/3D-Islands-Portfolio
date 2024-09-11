@@ -1,7 +1,7 @@
 import './project-template-page.css'
 
 import projectImg from '../../../../public/imgs/Codelighthouse.png'
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import LightBox from "../../LightBox/light-box.jsx";
 import closeSvg from "../../../../public/svgs/close.svg";
 
@@ -14,6 +14,7 @@ const ProjectTemplatePage = ({lastScroll, title, setProject, description, imgs})
         document.querySelector('body').style.minHeight = '200vh'
         window.scrollTo(0, lastScroll)
     }
+
 
     return (
         <>

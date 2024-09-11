@@ -8,7 +8,17 @@
   top: 0;
   right: 0;
   bottom: 0;
-  background: red;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.loading-screen .loader-progress {
+  font-size: 2rem;
+  font-weight: 200;
+  color: wheat;
 }
 
 /*# sourceMappingURL=loading-screen.css.map */

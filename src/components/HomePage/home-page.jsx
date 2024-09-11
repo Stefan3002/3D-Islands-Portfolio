@@ -43,12 +43,15 @@ const HomePage = ({night, setNight}) => {
 
     return (
         <div className='home-page'>
-            <Navigation scrollListener={scrollHandler.current} page={page} setPage={setPage} setNight={setNight} night={night} />
-            <Canvas className='slide-down-canvas' camera={{
+            {/*<LoadingScreen />*/}
+            <Suspense fallback={<LoadingScreen />}>
+                <Navigation scrollListener={scrollHandler.current} page={page} setPage={setPage} setNight={setNight} night={night} />
+
+                <Canvas className='slide-down-canvas' camera={{
                 near: .1,
                 far: 100,
             }} onCreated={canvasCreated}>
-                <Suspense fallback={<LoadingScreen/>}>
+
                     {/*<ambientLight intensity={.1}/>*/}
                     {!night ? <>
                         <directionalLight intensity={3}/>
@@ -138,8 +141,9 @@ const HomePage = ({night, setNight}) => {
                     }
                     <Listener project={project} scrollHandlerRef={scrollHandler} infoVisible={infoVisible} setInfoVisible={setInfoVisible}
                               island={island} isRotating={isRotating} setIsRotating={setIsRotating}/>
-                </Suspense>
+
             </Canvas>
+            </Suspense>
             {infoVisible && project === null && <InfoPage setLastScroll={setLastScroll} project={project} setProject={setProject} scrollHandler={scrollHandler.current} page={page} />}
             {project !== null && <ProjectPage lastScroll={lastScroll} project={project} setProject={setProject} />}
         </div>

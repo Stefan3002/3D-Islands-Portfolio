@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import '../general.css'
+import '../src/components/LoadingScreen/loading-screen.css'
 import HomePage from "./components/HomePage/home-page.jsx";
 import LandingPage from "./components/LandingPage/landing-page.jsx";
 

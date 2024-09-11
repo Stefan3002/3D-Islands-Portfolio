@@ -126,10 +126,11 @@ const Listener = ({project, scrollHandlerRef, infoVisible, setInfoVisible, islan
             nav.removeEventListener('mouseleave', mouseExitHandler)
 
             // Add the links back to the navigation
-
-            document.querySelectorAll('.navigation ul li').forEach(el => {
-                el.classList.remove('hidden')
-            })
+            console.log(project)
+            if(project === null)
+                document.querySelectorAll('.navigation ul li').forEach(el => {
+                    el.classList.remove('hidden')
+                })
 
 
             nav.style.top = 'unset'

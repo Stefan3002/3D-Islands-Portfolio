@@ -54,9 +54,12 @@ import img85 from '/imgs/project9/rsmi5.jpg'
 import img86 from '/imgs/project9/rsmi6.jpg'
 
 import ProjectTemplatePage from "./ProjectTemplatePage/project-template-page.jsx";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 const ProjectPage = ({lastScroll, project, setProject}) => {
     let imgs, description, title, cover
+
+
+
 
     switch(project) {
         case 0:

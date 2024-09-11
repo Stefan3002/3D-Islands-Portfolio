@@ -7,7 +7,7 @@ Title: Low poly floating island
 */
 
 import React, {useEffect, useRef} from 'react'
-import { useGLTF } from '@react-three/drei'
+import {useGLTF, useProgress} from '@react-three/drei'
 import islandGLTF from '../../../assets/models/islands/low_poly_floating_island.glb'
 import { a } from '@react-spring/three'
 import {useFrame} from "@react-three/fiber";
@@ -15,6 +15,7 @@ import {bkPoint} from "../../../../utils/responsiveness.js";
 
 const Island1 = ({scrollHandler, mesh, ...props}) => {
     // const islandRef = useRef()
+
     const { nodes, materials } = useGLTF(islandGLTF)
     const enlargementFactor = .004
     const rotationFactor = 2.60

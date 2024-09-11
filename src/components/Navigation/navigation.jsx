@@ -20,6 +20,7 @@ const Navigation = ({night, setNight, page, setPage, scrollListener}) => {
         if(!scrollListener)
             return
         scrollListener()
+
         // document.querySelector('.info-page').classList.remove('slide-left')
         // document.querySelector('.info-page').classList.add('slide-left2')
     }
