@@ -1,11 +1,11 @@
-import planeGltf from '../../../assets/models/extra/stylized_ww1_plane.glb'
+// import planeGltf from '../../../assets/models/extra/stylized_ww1_plane.glb'
 import {useAnimations, useGLTF} from "@react-three/drei";
 import {useEffect, useRef} from "react";
 import {useFrame} from "@react-three/fiber";
 
-const Plane = ({...props}) => {
+const Plane = ({scene, animations, ...props}) => {
     const meshRef = useRef()
-    const {scene, animations} = useGLTF(planeGltf)
+
     const {actions} = useAnimations(animations, meshRef)
     const  targetScale = .7
     const enlargementFactor = 1

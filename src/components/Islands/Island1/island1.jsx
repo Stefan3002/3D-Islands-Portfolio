@@ -13,10 +13,11 @@ import { a } from '@react-spring/three'
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 
-const Island1 = ({scrollHandler, mesh, ...props}) => {
+const Island1 = ({nodes, materials, scrollHandler, mesh, ...props}) => {
     // const islandRef = useRef()
 
-    const { nodes, materials } = useGLTF(islandGLTF)
+    // const { nodes, materials } = useGLTF(islandGLTF)
+
     const enlargementFactor = .004
     const rotationFactor = 2.60
     const idleRotationFactor = .2

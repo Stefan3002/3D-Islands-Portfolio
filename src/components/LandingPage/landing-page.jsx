@@ -2,7 +2,10 @@ import './landing-page.css'
 import Button from "../Button/button.jsx";
 import darkSVG from '../../../public/svgs/darkSVG.svg'
 import sunSVG from '../../../public/svgs/sunSVG.svg'
+
 const LandingPage = ({night, setNight, setStarted}) => {
+
+
 
     const startJourney = () => {
         document.querySelector('.landing-title').classList.add('fade-out')

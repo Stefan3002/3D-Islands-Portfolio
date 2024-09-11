@@ -17,7 +17,7 @@ import Island5 from "../Islands/Island5/island5.jsx";
 import Plane4 from "../ExtraModels/Plane4/plane4.jsx";
 import ProjectsPage from "../InfoPage/ProjectsPage/projects-page.jsx";
 import ProjectPage from "../ProjectPage/project-page.jsx";
-const HomePage = ({night, setNight}) => {
+const HomePage = ({plane1Nodes, island1Nodes, night, setNight}) => {
     const [isRotating, setIsRotating] = useState(false);
     const island = useRef()
     const [page, setPage] = useState(0)
@@ -104,8 +104,8 @@ const HomePage = ({night, setNight}) => {
                     {page === 0 ?
                         <>
                             <pointLight intensity={2.5} position={[0, 1, 0]}/>
-                            <Island1 scrollHandler={scrollHandler.current} mesh={island} position={[0, 0, 0]} scale={[0, 0, 0]} rotation={[0, -2, 0]}/>
-                            <Plane position={[0, 1.5, 0]} rotation={[0, 20, 0]} scale={[0, 0, 0]}/>
+                            <Island1 nodes={island1Nodes.nodes} materials={island1Nodes.materials} scrollHandler={scrollHandler.current} mesh={island} position={[0, 0, 0]} scale={[0, 0, 0]} rotation={[0, -2, 0]}/>
+                            <Plane scene={plane1Nodes.scene} animations={plane1Nodes.animations} position={[0, 1.5, 0]} rotation={[0, 20, 0]} scale={[0, 0, 0]}/>
                         </>
                         : page === 1 ?
                             <>
