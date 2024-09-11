@@ -35,7 +35,7 @@ const Navigation = ({night, setNight, page, setPage, scrollListener}) => {
                     return <li className={`${page === index && 'selected'}`}
                                onClick={() => changePage(index)}>{menuItem}</li>
                 })}
-                <img className='scheme-option' src={!night ? darkSVG : sunSVG} onClick={() => goDark()}/>
+                <li><img className='scheme-option' src={!night ? darkSVG : sunSVG} onClick={() => goDark()}/></li>
             </ul>
             <h1 className='page-title'>{menuItems[page]} Island</h1>
         </div>
