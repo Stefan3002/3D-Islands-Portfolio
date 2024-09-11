@@ -143,9 +143,10 @@ const HomePage = ({night, setNight}) => {
                               island={island} isRotating={isRotating} setIsRotating={setIsRotating}/>
 
             </Canvas>
+                {infoVisible && project === null && <InfoPage setLastScroll={setLastScroll} project={project} setProject={setProject} scrollHandler={scrollHandler.current} page={page} />}
+                {project !== null && <ProjectPage lastScroll={lastScroll} project={project} setProject={setProject} />}
             </Suspense>
-            {infoVisible && project === null && <InfoPage setLastScroll={setLastScroll} project={project} setProject={setProject} scrollHandler={scrollHandler.current} page={page} />}
-            {project !== null && <ProjectPage lastScroll={lastScroll} project={project} setProject={setProject} />}
+
         </div>
     )
 }
