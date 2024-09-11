@@ -1,3 +1,11 @@
+.nav-dark {
+  background-color: #5B2333 !important;
+  color: wheat;
+}
+.nav-dark ul > li {
+  color: #070F2B !important;
+}
+
 .navigation {
   z-index: 20;
   text-align: center;

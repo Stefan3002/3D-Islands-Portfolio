@@ -26,7 +26,7 @@ const Navigation = ({night, setNight, page, setPage, scrollListener}) => {
     }
 
     return (
-        <div className='navigation'>
+        <div className={`navigation ${night ? 'nav-dark' : ''}`}>
             <ul>
                 {menuItems.map((menuItem, index) => {
                     return <li className={`${page === index && 'selected'}`}
