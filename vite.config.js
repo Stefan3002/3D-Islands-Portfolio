@@ -6,4 +6,5 @@ export default defineConfig({
   plugins: [react()],
   assetsInclude: ['**/*.glb'],
   publicDir: 'public',
+  base: '/opt/build/repo/'
 })
