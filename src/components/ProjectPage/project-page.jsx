@@ -37,7 +37,7 @@ import img51 from '../../../public/imgs/project6/landing1.png'
 import img52 from '../../../public/imgs/project6/landing2.png'
 import img53 from '../../../public/imgs/project6/landing3.png'
 import img54 from '../../../public/imgs/project6/landing4.png'
-import img55 from '/public/imgs/project6/landing4.png'
+import img55 from '../../../public/imgs/project6/landing5.png'
 
 import img61 from '../../../public/imgs/project7/educational1.png'
 import img62 from '../../../public/imgs/project7/educational2.png'
