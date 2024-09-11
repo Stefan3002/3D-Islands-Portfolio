@@ -75,8 +75,10 @@ const Listener = ({project, scrollHandlerRef, infoVisible, setInfoVisible, islan
             nav.classList.remove('slide-up-nav')
         //     Canvas
 
-            canvas.classList.add('slide-right-canvas')
-            canvas.classList.remove('slide-down-canvas')
+            if(window.innerWidth >= bkPoint) {
+                canvas.classList.add('slide-right-canvas')
+                canvas.classList.remove('slide-down-canvas')
+            }
 
             canvas.style.position = 'fixed'
 
@@ -135,8 +137,11 @@ const Listener = ({project, scrollHandlerRef, infoVisible, setInfoVisible, islan
             nav.classList.remove('slide-down-nav')
             nav.classList.add('slide-up-nav')
 
-            canvas.classList.add('slide-down-canvas')
-            canvas.classList.remove('slide-right-canvas')
+
+            if(window.innerWidth >= bkPoint) {
+                canvas.classList.add('slide-down-canvas')
+                canvas.classList.remove('slide-right-canvas')
+            }
 
             canvas.style.position = ''
             canvas.style.width = `${window.innerWidth}px`

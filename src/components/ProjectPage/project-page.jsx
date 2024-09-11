@@ -46,6 +46,13 @@ import img63 from '../../assets/imgs/educational.png'
 import img71 from '../../assets/imgs/project8/info1.jpeg'
 import img72 from '../../assets/imgs/project8/info2.jpeg'
 
+import img81 from '../../assets/imgs/project9/rsmi1.png'
+import img82 from '../../assets/imgs/project9/rsmi2.png'
+import img83 from '../../assets/imgs/project9/rsmi3.jpg'
+import img84 from '../../assets/imgs/project9/rsmi4.jpg'
+import img85 from '../../assets/imgs/project9/rsmi5.jpg'
+import img86 from '../../assets/imgs/project9/rsmi6.jpg'
+
 import ProjectTemplatePage from "./ProjectTemplatePage/project-template-page.jsx";
 import {useState} from "react";
 const ProjectPage = ({lastScroll, project, setProject}) => {
@@ -147,6 +154,53 @@ Facelifting and creating a new design for the website.
 </ul>
 <p> (07.08.2024) The website was subject to another facelifting to be on par with the specified requirements.</p>`
             title = 'Ora lui Robert NGO'
+            break
+        case 3:
+            imgs = [img81, img82, img83, img84, img85, img86]
+            description = ` I am an official student member  of the society. My profile can be seen <a href="https://srimed.ro/user/stefansecrieru/">here</a>.
+<h2 class='high'>Conferences</h2>
+            <p>I was part of the organising committee for:</p>
+            <ul>
+<li>jRoMedInf, 1st edition</li>
+<li>RoMedInf 37th edition</li>
+</ul>
+<p><span class="high">(14.05.2024)</span> I helped organising the 1st Junior RoMedInf conference by providing technical support, setting up the necessary devices and being present in the room for the entire duration of the event.</p>
+
+<p><span class="high">(15.09.2023)</span> Proud to Have Contributed to the Success of the 37th Romanian Society of Medical Informatics Conference🌟 #RoMedINF37</p>
+
+<p>I helped organising the conference (37th Romanian Society of Medical Informatics Conference 2023) that was held in the 14th and the 15th of September by:</p>
+<ul>
+<li>Helping each speaker find his / hers presentation</li>
+<li>Making sure that the speaker can see his presentation and his notes, but the rest of the audience (physical and online) could only see the presentation itself.</li>
+<li>Accommodating prerecorded presentations of some speakers.</li>
+<li>Setting up a loop for the e-posters session.</li>
+<li>Remotely positioning the camera so that the speaker is always centered for the online audience.</li>
+<li>Making sure the technical aspects are also in order (e.g: microphones, audio, cameras).</li>
+</ul>
+<p>I was present in the room for the entire duration of the conference.</p>
+
+<a href="https://srimed.ro/"><h2 class='high'>Web Site</h2></a>
+<p>I have designed and developed the Web App for RSIM (Romanian Society of Medical Informatics) from the ground up.</p>
+
+
+<p><span class="high">Features:</span></p>
+<ul>
+<li>Fully responsive on widescreens /desktops / phones</li>
+<li>Modern looking pages</li>
+<li>SPAs for individual pages, not just plain text</li>
+<li>Performance optimizations:</li>
+<ul>
+<li>Caching.</li>
+<li>Image compressing to WebP automatically (and a batch job for the old ones).</li>
+<li>Minify for CSS and JS automatically.</li>
+</ul>
+<li>Creating a full membership account system</li>
+</ul>
+<p>I have also developed the payment system for the RoMedInf application used to pay the registration fee for the conference. (06.04.2024)</p>
+
+<p>The official SRIM (RSIM) web app, has now been equipped with a full members / membership system where the society members can create an account and pay their membership. (16.04.2024)</p>
+`
+            title = 'Romanian Society of Medical Informatics Web Site + Conferences Tech Support'
             break
         case 4:
             imgs = [img41, img42, img43, img44, img45]

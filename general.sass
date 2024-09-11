@@ -15,11 +15,21 @@ body
 
 .dark
   background: linear-gradient(to right, $bg-color-dark, $bg-color2-dark)
-  color: $text-white-color
+  .landing-page
+    color: $text-white-color
 
 a
   color: inherit
   text-decoration: wavy underline
+
+.scheme-option
+  cursor: pointer
+  max-width: 40px
+  transition: all .15s ease-in-out
+  &:focus, &:hover
+    transition: all .15s ease-in-out
+    transform: scale(1.1)
+
 
 button
   font-family: "SUSE", sans-serif

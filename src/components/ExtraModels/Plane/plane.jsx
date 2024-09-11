@@ -7,7 +7,7 @@ const Plane = ({...props}) => {
     const meshRef = useRef()
     const {scene, animations} = useGLTF(planeGltf)
     const {actions} = useAnimations(animations, meshRef)
-
+    const  targetScale = .7
     const enlargementFactor = 1
 
     useEffect(() => {
@@ -15,13 +15,21 @@ const Plane = ({...props}) => {
     }, []);
 
     useFrame((state, delta) => {
+
+        if(meshRef.current.scale.x > targetScale)
+            meshRef.current.scale.x = targetScale
+        if(meshRef.current.scale.y > targetScale)
+            meshRef.current.scale.y = targetScale
+        if(meshRef.current.scale.z > targetScale)
+            meshRef.current.scale.z = targetScale
+
         meshRef.current.rotation.z = Math.cos(state.clock.getElapsedTime()) * .4
 
-        if(meshRef.current.scale.x < .7)
+        if(meshRef.current.scale.x < targetScale)
             meshRef.current.scale.x += enlargementFactor * delta
-        if(meshRef.current.scale.y < .7)
+        if(meshRef.current.scale.y < targetScale)
             meshRef.current.scale.y += enlargementFactor * delta
-        if(meshRef.current.scale.z < .7)
+        if(meshRef.current.scale.z < targetScale)
             meshRef.current.scale.z += enlargementFactor * delta
     })
 

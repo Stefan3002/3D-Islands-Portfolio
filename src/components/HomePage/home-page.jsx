@@ -63,7 +63,10 @@ const HomePage = ({night, setNight}) => {
                             </> :
                             page === 1 ?
                                 <>
+                                    <hemisphereLight intensity={.5} groundColor='#070F2B' skyColor='#FCFF4B'/>
+                                    <pointLight intensity={2.5} position={[0, 1.5, 0]}/>
                                     <spotLight intensity={3} position={[3, 1.5, 1]}/>
+                                    <spotLight intensity={3} position={[-3, 1.5, 1]}/>
                                 </>
                                 : page === 2 ?
                                     <>
@@ -86,8 +89,14 @@ const HomePage = ({night, setNight}) => {
                                                 <spotLight intesity={11} position={[-2, 2, 1]}/>
                                                 <pointLight intensity={2.5} position={[0, 1.5, 0]}/>
                                             </>
-                                            :
-                                            null
+                                            : page === 5 ?
+                                                <>
+                                                    <hemisphereLight intensity={.5} groundColor='#070F2B' skyColor='#FCFF4B'/>
+                                                    <spotLight intesity={1} position={[1.7, 1.5, 1]}/>
+                                                    <spotLight intesity={1} position={[-1.7, 1.5, 1]}/>
+                                                    {/*{ready && <spotLightHelper args={[spotLightRef.current, 2]}/>}*/}
+                                                </> : null
+
                     }
                     {page === 0 ?
                         <>
@@ -122,10 +131,9 @@ const HomePage = ({night, setNight}) => {
                                             <Plane4 scale={[0, 0, 0]} position={[-.2, 2, 0]} rotation={[0, 2.5, 0]}/>
                                         </> : page === 5 ?
                                             <>
-                                                {/*<pointLight intensity={2.5} position={[-2, 1, 0]}/>*/}
-                                                <Island2 mesh={island} position={[-.2, -.8, 0]} scale={[0, 0, 0]}
-                                                         rotation={[0, -2, 0]}/>
-                                                <Bird scale={[0, 0, 0]} position={[-.2, 2.3, 0]}/>
+                                                <pointLight intensity={2.5} position={[0, 1, 0]}/>
+                                                <Island1 scrollHandler={scrollHandler.current} mesh={island} position={[0, 0, 0]} scale={[0, 0, 0]} rotation={[0, -2, 0]}/>
+                                                <Bird position={[0, 2, 0]} rotation={[0, 6.5, 0]} scale={[0, 0, 0]}/>
                                             </> : null
                     }
                     <Listener project={project} scrollHandlerRef={scrollHandler} infoVisible={infoVisible} setInfoVisible={setInfoVisible}

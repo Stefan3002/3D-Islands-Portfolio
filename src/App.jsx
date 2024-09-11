@@ -7,7 +7,7 @@ import HomePage from "./components/HomePage/home-page.jsx";
 import LandingPage from "./components/LandingPage/landing-page.jsx";
 
 function App() {
-    const [started, setStarted] = useState(true)
+    const [started, setStarted] = useState(false)
     const [night, setNight] = useState(false)
     if(started)
         return <HomePage night={night} setNight={setNight} />

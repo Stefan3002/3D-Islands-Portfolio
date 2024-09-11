@@ -1,3 +1,8 @@
-
+.legal-page .about-page-top {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #070F2B), url("../../../assets/imgs/legal.jpg");
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+}
 
 /*# sourceMappingURL=legal-page.css.map */

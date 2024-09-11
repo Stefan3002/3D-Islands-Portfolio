@@ -1,5 +1,7 @@
 import './landing-page.css'
 import Button from "../Button/button.jsx";
+import darkSVG from '../../assets/svgs/darkSVG.svg'
+import sunSVG from '../../assets/svgs/sunSVG.svg'
 const LandingPage = ({night, setNight, setStarted}) => {
 
     const startJourney = () => {
@@ -28,8 +30,8 @@ const LandingPage = ({night, setNight, setStarted}) => {
                 <p className='landing-description'>Master student and Web Administrator. Web technologies are my passion.</p>
                 {/*<h2 className='landing-catch'>How about you explore my life?</h2>*/}
                 <div className="color-scheme-landing">
-                    <p onClick={() => changeColorScheme()}>Light</p>
-                    <p onClick={() => changeColorScheme()}>Dark</p>
+                    <img className='scheme-option' src={sunSVG} onClick={() => changeColorScheme()}/>
+                    <img className='scheme-option' src={darkSVG} onClick={() => changeColorScheme()}/>
                 </div>
                 <Button callback={startJourney} customClass='start-button' text='Start journey' />
             </section>

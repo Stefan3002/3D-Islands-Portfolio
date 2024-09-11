@@ -14,12 +14,24 @@ body {
 
 .dark {
   background: linear-gradient(to right, #38182F, #5B2333);
+}
+.dark .landing-page {
   color: wheat;
 }
 
 a {
   color: inherit;
   text-decoration: wavy underline;
+}
+
+.scheme-option {
+  cursor: pointer;
+  max-width: 40px;
+  transition: all 0.15s ease-in-out;
+}
+.scheme-option:focus, .scheme-option:hover {
+  transition: all 0.15s ease-in-out;
+  transform: scale(1.1);
 }
 
 button {

@@ -27,6 +27,14 @@ const Island1 = ({scrollHandler, mesh, ...props}) => {
     }, [])
 
     useFrame((state, delta) => {
+        if(mesh.current.scale.x > targetScale)
+            mesh.current.scale.x = targetScale
+        if(mesh.current.scale.y > targetScale)
+            mesh.current.scale.y = targetScale
+        if(mesh.current.scale.z > targetScale)
+            mesh.current.scale.z = targetScale
+
+
         if(mesh.current.scale.x < targetScale)
             mesh.current.scale.x += (enlargementFactor * delta)
         if(mesh.current.scale.y < targetScale)

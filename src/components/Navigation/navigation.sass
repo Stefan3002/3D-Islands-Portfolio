@@ -1,7 +1,9 @@
 @import '../../../utils/constants'
 
 .navigation
-  z-index: 2
+  .scheme-option
+    max-width: 20px
+  z-index: 20
   text-align: center
   background-color: $bg-color
   position: fixed
@@ -25,3 +27,9 @@
       box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px
   .page-title
     font-weight: 900
+
+
+@media screen and (max-width: $bk-point)
+  .navigation
+    ul
+      flex-direction: column

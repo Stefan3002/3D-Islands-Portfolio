@@ -20,6 +20,14 @@ const Plane3 = ({...props}) => {
     }, []);
 
     useFrame((state, delta) => {
+        if(meshRef.current.scale.x > targetScale)
+            meshRef.current.scale.x = targetScale
+        if(meshRef.current.scale.y > targetScale)
+            meshRef.current.scale.y = targetScale
+        if(meshRef.current.scale.z > targetScale)
+            meshRef.current.scale.z = targetScale
+
+
         meshRef.current.rotation.z = Math.cos(state.clock.getElapsedTime()) * .4
 
         if(meshRef.current.scale.x < targetScale)
