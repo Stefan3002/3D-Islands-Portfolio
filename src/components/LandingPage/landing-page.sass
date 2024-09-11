@@ -1,0 +1,35 @@
+@import '../../../utils/constants'
+
+.landing-page .wrapper
+  display: flex
+  width: 500px
+  justify-content: center
+  //align-items: center
+  min-height: 100vh
+  flex-direction: column
+  gap: .1rem
+  h1, h2, p
+    margin: 0
+    padding: 0
+  text-align: left
+  .landing-title
+    font-size: 5rem
+    font-weight: 900
+    line-height: 80px
+  .landing-description
+    font-weight: 200
+    line-height: 40px
+    font-size: 2rem
+  .start-button
+    margin-top: 1rem
+    font-size: 1.2rem
+    background: $accent-color
+    color: $text-white-color
+    &:focus, &:hover
+      background: transparent
+      transition: all .15s ease-in-out
+      color: $text-color
+      border: 1px solid $accent-color
+
+
+

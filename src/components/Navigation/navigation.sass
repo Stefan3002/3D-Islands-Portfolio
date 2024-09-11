@@ -1,0 +1,27 @@
+@import '../../../utils/constants'
+
+.navigation
+  z-index: 2
+  text-align: center
+  background-color: $bg-color
+  position: fixed
+  padding: 0 1rem
+  border-radius: 10px
+  bottom: 0
+  left: 50%
+  transform: translateX(-50%)
+  ul
+    padding: 0
+    display: flex
+    list-style-type: none
+    gap: 0
+    font-weight: 300
+    li
+      border-radius: 10px
+      padding: 0 1rem
+      cursor: pointer
+    .selected
+      background: $bg-color2
+      box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px
+  .page-title
+    font-weight: 900

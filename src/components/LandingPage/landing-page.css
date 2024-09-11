@@ -1,0 +1,37 @@
+.landing-page .wrapper {
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 0.1rem;
+  text-align: left;
+}
+.landing-page .wrapper h1, .landing-page .wrapper h2, .landing-page .wrapper p {
+  margin: 0;
+  padding: 0;
+}
+.landing-page .wrapper .landing-title {
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 80px;
+}
+.landing-page .wrapper .landing-description {
+  font-weight: 200;
+  line-height: 40px;
+  font-size: 2rem;
+}
+.landing-page .wrapper .start-button {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  background: #070F2B;
+  color: wheat;
+}
+.landing-page .wrapper .start-button:focus, .landing-page .wrapper .start-button:hover {
+  background: transparent;
+  transition: all 0.15s ease-in-out;
+  color: #070F2B;
+  border: 1px solid #070F2B;
+}
+
+/*# sourceMappingURL=landing-page.css.map */

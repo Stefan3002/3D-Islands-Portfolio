@@ -1,0 +1,161 @@
+@import './utils/constants'
+
+html
+  scroll-behavior: smooth
+
+body
+  overflow-x: hidden
+  color: $text-color
+  margin: 0
+  padding: 0
+  background: linear-gradient(to right, $bg-color, $bg-color2)
+  font-family: "SUSE", sans-serif
+  min-height: 200vh
+  //overflow-y: clip
+
+.dark
+  background: linear-gradient(to right, $bg-color-dark, $bg-color2-dark)
+  color: $text-white-color
+
+a
+  color: inherit
+  text-decoration: wavy underline
+
+button
+  font-family: "SUSE", sans-serif
+
+.wrapper
+  width: 80%
+  margin: 0 auto
+  max-width: 1500px
+
+.close-btn
+  background: $bg-color
+  border-radius: 10px
+  max-width: 70px
+  max-height: 70px
+  position: fixed
+  left: 10px
+  top: 10px
+  cursor: pointer
+  color: $text-white-color
+  transition: all .15s ease-in-out
+  //background: red
+  &:focus, &:hover
+    transform: scale(1.1)
+    transition: all .15s ease-in-out
+
+
+.hidden
+  display: none
+  visibility: hidden
+
+
+.fade-out
+  animation-name: fade-out
+  animation-fill-mode: forwards
+  animation-duration: .5s
+
+.slide-left
+  animation-name: slide-left
+  animation-fill-mode: forwards
+  animation-duration: .5s
+
+.slide-up
+  animation-name: slide-up
+  animation-fill-mode: forwards
+  animation-duration: .5s
+
+.slide-down-nav
+  opacity: 0
+  animation-name: slide-down-nav
+  animation-fill-mode: forwards
+  animation-duration: .5s
+
+.slide-up-nav
+  opacity: 0
+  animation-name: slide-up-nav
+  animation-fill-mode: forwards
+  animation-duration: .5s
+
+.slide-down-canvas
+  //opacity: 0
+  animation-name: slide-down-canvas
+  //animation-fill-mode: forwards
+  animation-duration: .5s
+
+.slide-right-canvas
+  //opacity: 0
+  animation-name: slide-right-canvas
+  //animation-fill-mode: forwards
+  animation-duration: .5s
+
+.high
+  text-decoration: underline
+  font-weight: 900
+  color: $highlight-color
+
+
+@keyframes slide-down-canvas
+  from
+    opacity: 0
+    transform: translateY(-100%)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+@keyframes slide-right-canvas
+  from
+    opacity: 0
+    transform: translateX(-100%) translateY(-50%)
+  to
+    opacity: 1
+    transform: translateX(0) translateY(-50%)
+
+
+@keyframes slide-up-nav
+  from
+    opacity: 0
+    transform: translateY(100%) translateX(-50%)
+  to
+    opacity: 1
+    transform: translateY(0) translateX(-50%)
+
+@keyframes slide-down-nav
+  from
+    opacity: 0
+    transform: translateY(-100%) translateX(-50%)
+  to
+    opacity: 1
+    transform: translateY(0) translateX(-50%)
+
+@keyframes slide-up
+  from
+    opacity: 0
+    transform: translateY(100%)
+  to
+    opacity: 1
+    transform: translateY(0)
+
+
+@keyframes slide-left
+  from
+    opacity: 0
+    transform: translateX(100%)
+  to
+    opacity: 1
+    transform: translateX(0)
+
+
+@keyframes fade-out
+  from
+    opacity: 1
+    transform: translateY(0)
+  to
+    opacity: 0
+    transform: translateY(-100%)
+
+
+@media screen and (max-width: $bk-point)
+  html
+    font-size: 13px

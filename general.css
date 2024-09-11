@@ -1,0 +1,181 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  color: #070F2B;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #FFAD05, #FCFF4B);
+  font-family: "SUSE", sans-serif;
+  min-height: 200vh;
+}
+
+.dark {
+  background: linear-gradient(to right, #38182F, #5B2333);
+  color: wheat;
+}
+
+a {
+  color: inherit;
+  text-decoration: wavy underline;
+}
+
+button {
+  font-family: "SUSE", sans-serif;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1500px;
+}
+
+.close-btn {
+  background: #FFAD05;
+  border-radius: 10px;
+  max-width: 70px;
+  max-height: 70px;
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  cursor: pointer;
+  color: wheat;
+  transition: all 0.15s ease-in-out;
+}
+.close-btn:focus, .close-btn:hover {
+  transform: scale(1.1);
+  transition: all 0.15s ease-in-out;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+}
+
+.fade-out {
+  animation-name: fade-out;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+.slide-left {
+  animation-name: slide-left;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+.slide-up {
+  animation-name: slide-up;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+.slide-down-nav {
+  opacity: 0;
+  animation-name: slide-down-nav;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+.slide-up-nav {
+  opacity: 0;
+  animation-name: slide-up-nav;
+  animation-fill-mode: forwards;
+  animation-duration: 0.5s;
+}
+
+.slide-down-canvas {
+  animation-name: slide-down-canvas;
+  animation-duration: 0.5s;
+}
+
+.slide-right-canvas {
+  animation-name: slide-right-canvas;
+  animation-duration: 0.5s;
+}
+
+.high {
+  text-decoration: underline;
+  font-weight: 900;
+  color: whitesmoke;
+}
+
+@keyframes slide-down-canvas {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide-right-canvas {
+  from {
+    opacity: 0;
+    transform: translateX(-100%) translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(-50%);
+  }
+}
+@keyframes slide-up-nav {
+  from {
+    opacity: 0;
+    transform: translateY(100%) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+@keyframes slide-down-nav {
+  from {
+    opacity: 0;
+    transform: translateY(-100%) translateX(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(-50%);
+  }
+}
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes slide-left {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+}
+@media screen and (max-width: 1000px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+/*# sourceMappingURL=general.css.map */

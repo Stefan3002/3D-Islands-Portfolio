@@ -1,0 +1,1 @@
+export const bkPoint = 1000

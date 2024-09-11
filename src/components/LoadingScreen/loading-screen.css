@@ -1,0 +1,14 @@
+.loader {
+  max-width: 70px;
+}
+
+.loading-screen {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: red;
+}
+
+/*# sourceMappingURL=loading-screen.css.map */
