@@ -135,7 +135,7 @@ const HomePage = ({plane1Nodes, island1Nodes, night, setNight}) => {
                                         </> : page === 5 ?
                                             <>
                                                 <pointLight intensity={2.5} position={[0, 1, 0]}/>
-                                                <Island1 scrollHandler={scrollHandler.current} mesh={island} position={[0, 0, 0]} scale={[0, 0, 0]} rotation={[0, -2, 0]}/>
+                                                <Island1 nodes={island1Nodes.nodes} materials={island1Nodes.materials} scrollHandler={scrollHandler.current} mesh={island} position={[0, 0, 0]} scale={[0, 0, 0]} rotation={[0, -2, 0]}/>
                                                 <Bird position={[0, 2, 0]} rotation={[0, 6.5, 0]} scale={[0, 0, 0]}/>
                                             </> : null
                     }
