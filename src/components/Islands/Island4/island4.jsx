@@ -8,13 +8,11 @@ Title: low poly island
 
 import React, {useEffect, useRef} from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
-import meshGltf from '../../../assets/models/islands/low_poly_island (2).glb'
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 
 
-const Island4 = ({scrollHandler, mesh, ...props}) => {
-    const { nodes, materials, animations } = useGLTF(meshGltf)
+const Island4 = ({nodes, materials, animations, scrollHandler, mesh, ...props}) => {
     const { actions } = useAnimations(animations, mesh)
 
     const enlargementFactor = .0035

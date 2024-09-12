@@ -8,15 +8,13 @@ Title: DAE The Flying Circus Koi Fish
 
 import React, {useEffect, useRef} from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
-import meshGltf from '../../../assets/models/extra/dae_the_flying_circus_koi_fish.glb'
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 
 
-const Plane2 = (props) => {
+const Plane2 = ({animations, nodes, materials, ...props}) => {
     const meshRef = useRef()
     const group = useRef()
-    const { nodes, materials, animations } = useGLTF(meshGltf)
     const { actions } = useAnimations(animations, meshRef)
 
     const enlargementFactor = .55

@@ -1,12 +1,10 @@
-import planeGltf from '../../../assets/models/extra/plane (2).glb'
 import {useAnimations, useGLTF} from "@react-three/drei";
 import {useEffect, useRef} from "react";
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 
-const Plane3 = ({...props}) => {
+const Plane3 = ({scene, animations, ...props}) => {
     const meshRef = useRef()
-    const {scene, animations} = useGLTF(planeGltf)
     const {actions} = useAnimations(animations, meshRef)
 
     const enlargementFactor = .0035
