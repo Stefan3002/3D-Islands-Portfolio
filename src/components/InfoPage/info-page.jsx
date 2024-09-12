@@ -11,7 +11,7 @@ import SkillsPage from "./SkillsPage/skills-page.jsx";
 import EducationPage from "./EducationPage/education-page.jsx";
 import PresentationPage from "./PresentationPage/presentation-page.jsx";
 import {bkPoint} from "../../../utils/responsiveness.js";
-const InfoPage = ({setLastScroll, project, setProject, page, scrollHandler}) => {
+const InfoPage = ({setLastScroll, project, page, scrollHandler}) => {
 
 
     useEffect(() => {
@@ -30,7 +30,7 @@ const InfoPage = ({setLastScroll, project, setProject, page, scrollHandler}) => 
     else if(page === 2)
         return <ExperiencePage animation={animation} />
     else if(page === 3)
-        return <ProjectsPage animation={animation} setLastScroll={setLastScroll} project={project} setProject={setProject} />
+        return <ProjectsPage animation={animation} setLastScroll={setLastScroll} />
     else if(page === 4)
         return <SkillsPage animation={animation} />
     else if(page === 5)

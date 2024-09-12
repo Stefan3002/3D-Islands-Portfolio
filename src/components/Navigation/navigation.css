@@ -2,7 +2,7 @@
   background-color: #5B2333 !important;
   color: wheat;
 }
-.nav-dark ul > li {
+.nav-dark ul > li.selected {
   color: #070F2B !important;
 }
 
@@ -60,6 +60,10 @@
     justify-content: center;
     background: #FCFF4B;
     padding: 0.5rem;
+  }
+
+  .nav-dark ul > li {
+    color: #070F2B !important;
   }
 }
 

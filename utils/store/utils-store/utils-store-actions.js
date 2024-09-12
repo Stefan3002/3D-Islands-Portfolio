@@ -58,3 +58,9 @@ export const setScene5P = (payload) => {
         payload
     }
 }
+export const setProject = (payload) => {
+    return {
+        type: 'SET_PROJECT',
+        payload
+    }
+}

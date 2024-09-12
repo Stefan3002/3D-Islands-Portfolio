@@ -19,6 +19,7 @@ import ProjectsPage from "../InfoPage/ProjectsPage/projects-page.jsx";
 import ProjectPage from "../ProjectPage/project-page.jsx";
 import {useSelector} from "react-redux";
 import {
+    getProject,
     getScene1I,
     getScene1P,
     getScene2I,
@@ -30,7 +31,9 @@ const HomePage = ({night, setNight}) => {
     const island = useRef()
     const [page, setPage] = useState(0)
     const [infoVisible, setInfoVisible] = useState(false)
-    const [project, setProject] = useState(null)
+
+    const project = useSelector(getProject)
+
     const scrollHandler = useRef()
     const [lastScroll, setLastScroll] = useState(0)
 
@@ -47,6 +50,10 @@ const HomePage = ({night, setNight}) => {
         if(spotLightRef.current)
             setReady(true)
     }, [spotLightRef]);
+
+    useEffect(() => {
+        console.log('aaa', project)
+    }, [project])
 
 
     return (
@@ -147,12 +154,12 @@ const HomePage = ({night, setNight}) => {
                                                 <Bird position={[0, 2, 0]} rotation={[0, 6.5, 0]} scale={[0, 0, 0]}/>
                                             </> : null
                     }
-                    <Listener project={project} scrollHandlerRef={scrollHandler} infoVisible={infoVisible} setInfoVisible={setInfoVisible}
+                    <Listener scrollHandlerRef={scrollHandler} infoVisible={infoVisible} setInfoVisible={setInfoVisible}
                               island={island} isRotating={isRotating} setIsRotating={setIsRotating}/>
 
             </Canvas>
-                {infoVisible && project === null && <InfoPage setLastScroll={setLastScroll} project={project} setProject={setProject} scrollHandler={scrollHandler.current} page={page} />}
-                {project !== null && <ProjectPage lastScroll={lastScroll} project={project} setProject={setProject} />}
+                {infoVisible && project === null && <InfoPage setLastScroll={setLastScroll} project={project} scrollHandler={scrollHandler.current} page={page} />}
+                {project !== null && <ProjectPage lastScroll={lastScroll} project={project} />}
             </Suspense>
 
         </div>

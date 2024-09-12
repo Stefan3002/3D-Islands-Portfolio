@@ -2,9 +2,14 @@ import './listener.css'
 import {useFrame, useThree} from "@react-three/fiber";
 import {useEffect, useRef} from "react";
 import {bkPoint} from "../../../utils/responsiveness.js";
-const Listener = ({project, scrollHandlerRef, infoVisible, setInfoVisible, island, isRotating, setIsRotating}) => {
+import {useSelector} from "react-redux";
+import {getProject} from "../../../utils/store/utils-store/utils-store-selectors.js";
+const Listener = ({scrollHandlerRef, infoVisible, setInfoVisible, island, isRotating, setIsRotating}) => {
     const {gl, viewport, camera} = useThree()
     const canvas = gl.domElement
+
+    const project = useSelector(getProject)
+
     const lastPosition = useRef(0)
     const lastPositionY = useRef(0)
     const rotationSpeed = useRef(0)
@@ -126,6 +131,7 @@ const Listener = ({project, scrollHandlerRef, infoVisible, setInfoVisible, islan
             nav.removeEventListener('mouseleave', mouseExitHandler)
 
             // Add the links back to the navigation
+            console.log('aaaaaaa', project)
             if(project === null) {
                 navUl?.classList.remove('hidden')
             }

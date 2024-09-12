@@ -9,6 +9,7 @@ const INITIAL_VALUE = {
     scene4P: null,
     scene5I: null,
     scene5P: null,
+    project: null
 }
 
 const utilsReducer = (state = INITIAL_VALUE, action) => {
@@ -63,6 +64,11 @@ const utilsReducer = (state = INITIAL_VALUE, action) => {
             return {
                 ...state,
                 scene5P: payload
+            }
+        case 'SET_PROJECT':
+            return {
+                ...state,
+                project: payload
             }
 
         default:

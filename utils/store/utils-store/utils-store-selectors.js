@@ -8,3 +8,4 @@ export const getScene4I = (state) => state.utilsStore.scene4I
 export const getScene4P = (state) => state.utilsStore.scene4P
 export const getScene5I = (state) => state.utilsStore.scene5I
 export const getScene5P = (state) => state.utilsStore.scene5P
+export const getProject = (state) => state.utilsStore.project

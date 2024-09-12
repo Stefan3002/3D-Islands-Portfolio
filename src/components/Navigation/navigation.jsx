@@ -2,10 +2,13 @@ import './navigation.css'
 import {useEffect, useRef} from "react";
 import darkSVG from "../../../public/svgs/darkSVG.svg";
 import sunSVG from "../../../public/svgs/sunSVG.svg";
+import {useSelector} from "react-redux";
+import {getProject} from "../../../utils/store/utils-store/utils-store-selectors.js";
 const Navigation = ({night, setNight, page, setPage, scrollListener}) => {
     const menuItems = [
         'Presentation', 'Education', 'Experience', 'Projects', 'Skills', 'Legal'
     ]
+
 
     const goDark = () => {
         setNight(!night)
@@ -24,7 +27,7 @@ const Navigation = ({night, setNight, page, setPage, scrollListener}) => {
         // document.querySelector('.info-page').classList.remove('slide-left')
         // document.querySelector('.info-page').classList.add('slide-left2')
     }
-
+    // console.log('bbbb', project)
     return (
         <div className={`navigation ${night ? 'nav-dark' : ''}`}>
             <ul>

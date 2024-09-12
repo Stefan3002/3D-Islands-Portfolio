@@ -55,11 +55,8 @@ import img86 from '/imgs/project9/rsmi6.jpg'
 
 import ProjectTemplatePage from "./ProjectTemplatePage/project-template-page.jsx";
 import {useEffect, useState} from "react";
-const ProjectPage = ({lastScroll, project, setProject}) => {
+const ProjectPage = ({lastScroll, project}) => {
     let imgs, description, title, cover
-
-
-
 
     switch(project) {
         case 0:
@@ -351,7 +348,7 @@ I created another script for automating the process of verifying the date of the
     }
 
 
-    return <ProjectTemplatePage lastScroll={lastScroll} title={title} description={description} imgs={imgs} setProject={setProject}/>
+    return <ProjectTemplatePage lastScroll={lastScroll} title={title} description={description} imgs={imgs}/>
 
 }
 export default ProjectPage

@@ -2,7 +2,10 @@ import './projects-page.css'
 import Button from "../../Button/button.jsx";
 import ArrowUp from "../../../../public/svgs/arrow-up.svg";
 import scrollSVG from "../../../../public/svgs/scroll.svg";
-const ProjectsPage = ({animation, setLastScroll, project, setProject}) => {
+import {useDispatch} from "react-redux";
+import {setProject} from "../../../../utils/store/utils-store/utils-store-actions.js";
+const ProjectsPage = ({animation, setLastScroll}) => {
+    const dispatch = useDispatch()
 
     const projects = [
         {
@@ -35,7 +38,7 @@ const ProjectsPage = ({animation, setLastScroll, project, setProject}) => {
     ]
 
     const openProject = (index) => {
-        setProject(index)
+        dispatch(setProject(index))
         window.scrollTo(0, 0)
         setLastScroll(window.scrollY)
         document.querySelector('body').style.minHeight = '100vh'

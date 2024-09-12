@@ -4,13 +4,15 @@ import projectImg from '../../../../public/imgs/Codelighthouse.png'
 import {useEffect, useState} from "react";
 import LightBox from "../../LightBox/light-box.jsx";
 import closeSvg from "../../../../public/svgs/close.svg";
+import {setProject} from "../../../../utils/store/utils-store/utils-store-actions.js";
+import {useDispatch} from "react-redux";
 
-const ProjectTemplatePage = ({lastScroll, title, setProject, description, imgs}) => {
+const ProjectTemplatePage = ({lastScroll, title, description, imgs}) => {
     const [lightBoxImg, setLightBoxImg] = useState(null)
-
+    const dispatch = useDispatch();
 
     const closeProject = () => {
-        setProject(null)
+        dispatch(setProject(null))
         document.querySelector('body').style.minHeight = '200vh'
         window.scrollTo(0, lastScroll)
     }
