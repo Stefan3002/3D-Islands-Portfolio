@@ -4,9 +4,10 @@ import {useEffect, useRef} from "react";
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 
-const Bird = ({...props}) => {
+const Bird = ({scene, animations, ...props}) => {
+    console.log(scene, animations)
     const meshRef = useRef()
-    const {scene, animations} = useGLTF(planeGltf)
+
     const {actions} = useAnimations(animations, meshRef)
 
     let targetScale = .0015

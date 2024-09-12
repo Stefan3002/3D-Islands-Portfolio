@@ -8,13 +8,10 @@ Title: Low poly forest
 
 import React, {useEffect, useRef} from 'react'
 import { useGLTF } from '@react-three/drei'
-
-import meshGltf from '../../../assets/models/islands/low_poly_forest.glb'
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 
-const Island2 = ({scrollHandler, mesh, ...props}) => {
-    const { nodes, materials } = useGLTF(meshGltf)
+const Island2 = ({nodes, materials, scrollHandler, mesh, ...props}) => {
 
     const enlargementFactor = .5
     const rotationFactor = 1.80

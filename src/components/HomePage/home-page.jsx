@@ -17,7 +17,7 @@ import Island5 from "../Islands/Island5/island5.jsx";
 import Plane4 from "../ExtraModels/Plane4/plane4.jsx";
 import ProjectsPage from "../InfoPage/ProjectsPage/projects-page.jsx";
 import ProjectPage from "../ProjectPage/project-page.jsx";
-const HomePage = ({plane1Nodes, island1Nodes, night, setNight}) => {
+const HomePage = ({island2Nodes, birdNodes, plane1Nodes, island1Nodes, night, setNight}) => {
     const [isRotating, setIsRotating] = useState(false);
     const island = useRef()
     const [page, setPage] = useState(0)
@@ -39,6 +39,8 @@ const HomePage = ({plane1Nodes, island1Nodes, night, setNight}) => {
         if(spotLightRef.current)
             setReady(true)
     }, [spotLightRef]);
+
+    console.log('aaaa', island2Nodes, birdNodes)
 
 
     return (
@@ -110,9 +112,9 @@ const HomePage = ({plane1Nodes, island1Nodes, night, setNight}) => {
                         : page === 1 ?
                             <>
                                 {/*<pointLight intensity={2.5} position={[-2, 1, 0]}/>*/}
-                                <Island2 scrollHandler={scrollHandler.current} mesh={island} position={[-.2, -.8, 0]} scale={[0, 0, 0]}
+                                <Island2 nodes={island2Nodes.nodes} materials={island2Nodes.materials} scrollHandler={scrollHandler.current} mesh={island} position={[-.2, -.8, 0]} scale={[0, 0, 0]}
                                          rotation={[0, -2, 0]}/>
-                                <Bird scale={[0, 0, 0]} position={[-.2, 2.3, 0]}/>
+                                <Bird scene={birdNodes.scene} animations={birdNodes.animations} scale={[0, 0, 0]} position={[-.2, 2.3, 0]}/>
                             </>
                             : page === 2 ?
                                 <>
