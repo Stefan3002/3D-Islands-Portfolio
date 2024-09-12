@@ -1,12 +1,16 @@
-import planeGltf from '../../../assets/models/extra/model_plane.glb'
 import {useAnimations, useGLTF} from "@react-three/drei";
 import {useEffect, useRef} from "react";
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
+import {useSelector} from "react-redux";
+import {getScene5P} from "../../../../utils/store/utils-store/utils-store-selectors.js";
 
 const Plane4 = ({...props}) => {
+    const plane4Nodes = useSelector(getScene5P)
+    const {scene, animations} = plane4Nodes
+
     const meshRef = useRef()
-    const {scene, animations} = useGLTF(planeGltf)
+
     const {actions} = useAnimations(animations, meshRef)
 
     const enlargementFactor = 6.4

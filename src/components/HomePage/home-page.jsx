@@ -17,7 +17,15 @@ import Island5 from "../Islands/Island5/island5.jsx";
 import Plane4 from "../ExtraModels/Plane4/plane4.jsx";
 import ProjectsPage from "../InfoPage/ProjectsPage/projects-page.jsx";
 import ProjectPage from "../ProjectPage/project-page.jsx";
-const HomePage = ({plane3Nodes, island4Nodes, plane2Nodes, island3Nodes, island2Nodes, birdNodes, plane1Nodes, island1Nodes, night, setNight}) => {
+import {useSelector} from "react-redux";
+import {
+    getScene1I,
+    getScene1P,
+    getScene2I,
+    getScene2P, getScene3I, getScene3P, getScene4I, getScene4P, getScene5I, getScene5P
+} from "../../../utils/store/utils-store/utils-store-selectors.js";
+const HomePage = ({night, setNight}) => {
+
     const [isRotating, setIsRotating] = useState(false);
     const island = useRef()
     const [page, setPage] = useState(0)
@@ -40,7 +48,6 @@ const HomePage = ({plane3Nodes, island4Nodes, plane2Nodes, island3Nodes, island2
             setReady(true)
     }, [spotLightRef]);
 
-    console.log(plane2Nodes)
 
     return (
         <div className='home-page'>
@@ -105,28 +112,28 @@ const HomePage = ({plane3Nodes, island4Nodes, plane2Nodes, island3Nodes, island2
                     {page === 0 ?
                         <>
                             <pointLight intensity={2.5} position={[0, 1, 0]}/>
-                            <Island1 nodes={island1Nodes.nodes} materials={island1Nodes.materials} scrollHandler={scrollHandler.current} mesh={island} position={[0, 0, 0]} scale={[0, 0, 0]} rotation={[0, -2, 0]}/>
-                            <Plane scene={plane1Nodes.scene} animations={plane1Nodes.animations} position={[0, 1.5, 0]} rotation={[0, 20, 0]} scale={[0, 0, 0]}/>
+                            <Island1 scrollHandler={scrollHandler.current} mesh={island} position={[0, 0, 0]} scale={[0, 0, 0]} rotation={[0, -2, 0]}/>
+                            <Plane position={[0, 1.5, 0]} rotation={[0, 20, 0]} scale={[0, 0, 0]}/>
                         </>
                         : page === 1 ?
                             <>
                                 {/*<pointLight intensity={2.5} position={[-2, 1, 0]}/>*/}
-                                <Island2 nodes={island2Nodes.nodes} materials={island2Nodes.materials} scrollHandler={scrollHandler.current} mesh={island} position={[-.2, -.8, 0]} scale={[0, 0, 0]}
+                                <Island2 scrollHandler={scrollHandler.current} mesh={island} position={[-.2, -.8, 0]} scale={[0, 0, 0]}
                                          rotation={[0, -2, 0]}/>
-                                <Bird scene={birdNodes.scene} animations={birdNodes.animations} scale={[0, 0, 0]} position={[-.2, 2.3, 0]}/>
+                                <Bird scale={[0, 0, 0]} position={[-.2, 2.3, 0]}/>
                             </>
                             : page === 2 ?
                                 <>
                                     {/*<pointLight intensity={2.5} position={[-2, 1, 0]}/>*/}
-                                    <Island3 nodes={island3Nodes.nodes} materials={island3Nodes.materials} scrollHandler={scrollHandler.current} mesh={island} position={[0, 1, 0]} scale={[0, 0, 0]}
+                                    <Island3 scrollHandler={scrollHandler.current} mesh={island} position={[0, 1, 0]} scale={[0, 0, 0]}
                                              rotation={[0, 0, 0]}/>
-                                    <Plane2 materials={plane2Nodes.materials} nodes={plane2Nodes.nodes} animations={plane2Nodes.animations} scale={[0, 0, 0]} position={[-.2, 2.3, 0]} rotation={[0, -21, 0]}/>
+                                    <Plane2 scale={[0, 0, 0]} position={[-.2, 2.3, 0]} rotation={[0, -21, 0]}/>
                                 </> : page === 3 ?
                                     <>
                                         {/*<pointLight intensity={2.5} position={[-2, 1, 0]}/>*/}
-                                        <Island4 animations={island4Nodes.animations} nodes={island4Nodes.nodes} materials={island4Nodes.materials} scrollHandler={scrollHandler.current} mesh={island} position={[-.2, 1, 0]} scale={[0, 0, 0]}
+                                        <Island4 scrollHandler={scrollHandler.current} mesh={island} position={[-.2, 1, 0]} scale={[0, 0, 0]}
                                                  rotation={[0, -.5, 0]}/>
-                                        <Plane3 scene={plane3Nodes.scene} animations={plane3Nodes.animations} scale={[0, 0, 0]} rotation={[0, 4, 0]} position={[-.2, 2, 0]}/>
+                                        <Plane3 scale={[0, 0, 0]} rotation={[0, 4, 0]} position={[-.2, 2, 0]}/>
                                     </> : page === 4 ?
                                         <>
                                             {/*<pointLight intensity={2.5} position={[-2, 1, 0]}/>*/}
@@ -136,8 +143,8 @@ const HomePage = ({plane3Nodes, island4Nodes, plane2Nodes, island3Nodes, island2
                                         </> : page === 5 ?
                                             <>
                                                 <pointLight intensity={2.5} position={[0, 1, 0]}/>
-                                                <Island1 nodes={island1Nodes.nodes} materials={island1Nodes.materials} scrollHandler={scrollHandler.current} mesh={island} position={[0, 0, 0]} scale={[0, 0, 0]} rotation={[0, -2, 0]}/>
-                                                <Bird scene={birdNodes.scene} animations={birdNodes.animations} position={[0, 2, 0]} rotation={[0, 6.5, 0]} scale={[0, 0, 0]}/>
+                                                <Island1 scrollHandler={scrollHandler.current} mesh={island} position={[0, 0, 0]} scale={[0, 0, 0]} rotation={[0, -2, 0]}/>
+                                                <Bird position={[0, 2, 0]} rotation={[0, 6.5, 0]} scale={[0, 0, 0]}/>
                                             </> : null
                     }
                     <Listener project={project} scrollHandlerRef={scrollHandler} infoVisible={infoVisible} setInfoVisible={setInfoVisible}

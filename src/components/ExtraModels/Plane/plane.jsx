@@ -2,10 +2,13 @@
 import {useAnimations, useGLTF} from "@react-three/drei";
 import {useEffect, useRef} from "react";
 import {useFrame} from "@react-three/fiber";
+import {useSelector} from "react-redux";
+import {getScene1P} from "../../../../utils/store/utils-store/utils-store-selectors.js";
 
-const Plane = ({scene, animations, ...props}) => {
+const Plane = ({...props}) => {
+    const plane1Nodes = useSelector(getScene1P)
     const meshRef = useRef()
-
+    const {scene, animations} =  plane1Nodes
     const {actions} = useAnimations(animations, meshRef)
     const  targetScale = .7
     const enlargementFactor = 1

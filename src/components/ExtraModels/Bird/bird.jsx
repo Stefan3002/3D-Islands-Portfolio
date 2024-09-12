@@ -3,9 +3,12 @@ import {useAnimations, useGLTF} from "@react-three/drei";
 import {useEffect, useRef} from "react";
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
+import {useSelector} from "react-redux";
+import {getScene2P} from "../../../../utils/store/utils-store/utils-store-selectors.js";
 
-const Bird = ({scene, animations, ...props}) => {
-    console.log(scene, animations)
+const Bird = ({...props}) => {
+    const birdNodes = useSelector(getScene2P)
+    const {scene, animations} =  birdNodes
     const meshRef = useRef()
 
     const {actions} = useAnimations(animations, meshRef)

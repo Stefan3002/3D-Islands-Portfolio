@@ -12,11 +12,14 @@ import islandGLTF from '../../../assets/models/islands/low_poly_floating_island.
 import { a } from '@react-spring/three'
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
+import {useSelector} from "react-redux";
+import {getScene1I} from "../../../../utils/store/utils-store/utils-store-selectors.js";
 
-const Island1 = ({nodes, materials, scrollHandler, mesh, ...props}) => {
+const Island1 = ({scrollHandler, mesh, ...props}) => {
     // const islandRef = useRef()
+    const island1Nodes = useSelector(getScene1I)
 
-    // const { nodes, materials } = useGLTF(islandGLTF)
+    const { nodes, materials } = island1Nodes
 
     const enlargementFactor = .004
     const rotationFactor = 2.60

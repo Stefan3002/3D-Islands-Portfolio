@@ -8,13 +8,15 @@ Title: Island in the sky
 
 import React, {useEffect, useRef} from 'react'
 import { useGLTF } from '@react-three/drei'
-import meshGltf from '../../../assets/models/islands/island_in_the_sky.glb'
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
+import {useSelector} from "react-redux";
+import {getScene5I} from "../../../../utils/store/utils-store/utils-store-selectors.js";
 
 
 const Island5 = ({scrollHandler, mesh, ...props}) => {
-    const { nodes, materials } = useGLTF(meshGltf)
+    const island5Nodes = useSelector(getScene5I)
+    const {nodes, materials} = island5Nodes
 
     const enlargementFactor = .5
     const rotationFactor = 4

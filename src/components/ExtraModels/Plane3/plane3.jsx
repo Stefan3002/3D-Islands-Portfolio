@@ -2,8 +2,13 @@ import {useAnimations, useGLTF} from "@react-three/drei";
 import {useEffect, useRef} from "react";
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
+import {useSelector} from "react-redux";
+import {getScene4P} from "../../../../utils/store/utils-store/utils-store-selectors.js";
 
-const Plane3 = ({scene, animations, ...props}) => {
+const Plane3 = ({...props}) => {
+    const plane3Nodes = useSelector(getScene4P)
+    const {scene, animations} = plane3Nodes
+
     const meshRef = useRef()
     const {actions} = useAnimations(animations, meshRef)
 

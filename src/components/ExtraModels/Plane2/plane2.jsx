@@ -10,9 +10,13 @@ import React, {useEffect, useRef} from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
+import {useSelector} from "react-redux";
+import {getScene3P} from "../../../../utils/store/utils-store/utils-store-selectors.js";
 
 
-const Plane2 = ({animations, nodes, materials, ...props}) => {
+const Plane2 = ({...props}) => {
+    const plane2Nodes = useSelector(getScene3P)
+    const {animations,  nodes, materials} = plane2Nodes
     const meshRef = useRef()
     const group = useRef()
     const { actions } = useAnimations(animations, meshRef)

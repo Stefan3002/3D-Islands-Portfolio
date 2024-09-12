@@ -10,9 +10,13 @@ import React, {useEffect, useRef} from 'react'
 import { useGLTF, useAnimations } from '@react-three/drei'
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
+import {useSelector} from "react-redux";
+import {getScene4I} from "../../../../utils/store/utils-store/utils-store-selectors.js";
 
 
-const Island4 = ({nodes, materials, animations, scrollHandler, mesh, ...props}) => {
+const Island4 = ({scrollHandler, mesh, ...props}) => {
+    const island4Nodes = useSelector(getScene4I)
+    const {nodes, materials, animations} = island4Nodes
     const { actions } = useAnimations(animations, mesh)
 
     const enlargementFactor = .0035
