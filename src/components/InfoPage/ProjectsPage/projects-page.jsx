@@ -2,7 +2,7 @@ import './projects-page.css'
 import Button from "../../Button/button.jsx";
 import ArrowUp from "../../../../public/svgs/arrow-up.svg";
 import scrollSVG from "../../../../public/svgs/scroll.svg";
-const ProjectsPage = ({setLastScroll, project, setProject}) => {
+const ProjectsPage = ({animation, setLastScroll, project, setProject}) => {
 
     const projects = [
         {
@@ -42,7 +42,7 @@ const ProjectsPage = ({setLastScroll, project, setProject}) => {
     }
 
     return (
-        <div className='about-page projects-page slide-left info-page'>
+        <div className={`about-page projects-page ${animation} info-page`}>
             <span id="top" />
             <div className="about-page-top">
                 <h2 className='about-title'>My projects</h2>

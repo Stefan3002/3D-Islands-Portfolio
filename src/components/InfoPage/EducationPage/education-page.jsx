@@ -2,9 +2,9 @@ import './education-page.css'
 import Button from "../../Button/button.jsx";
 import ArrowUp from "../../../../public/svgs/arrow-up.svg";
 import scrollSVG from "../../../../public/svgs/scroll.svg";
-const EducationPage = () => {
+const EducationPage = ({animation}) => {
     return (
-        <div className='about-page education-page slide-left info-page'>
+        <div className={`about-page education-page ${animation} info-page`}>
             <span id="top"/>
             <div className="about-page-top">
                 <h2 className='about-title'>My education</h2>
