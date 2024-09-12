@@ -14,11 +14,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0;
 }
 .loading-screen .loader-progress {
   font-size: 2rem;
   font-weight: 200;
   color: wheat;
+  margin: 0;
 }
 
 /*# sourceMappingURL=loading-screen.css.map */

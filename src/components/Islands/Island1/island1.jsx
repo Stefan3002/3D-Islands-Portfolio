@@ -19,6 +19,9 @@ const Island1 = ({scrollHandler, mesh, ...props}) => {
     // const islandRef = useRef()
     const island1Nodes = useSelector(getScene1I)
 
+    if(!island1Nodes)
+        return null
+
     const { nodes, materials } = island1Nodes
 
     const enlargementFactor = .004
