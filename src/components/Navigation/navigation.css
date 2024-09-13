@@ -17,6 +17,10 @@
   left: 50%;
   transform: translateX(-50%);
 }
+.navigation .menu-controls {
+  max-width: 30px;
+  cursor: pointer;
+}
 .navigation .scheme-option {
   max-width: 20px;
 }
