@@ -25,6 +25,7 @@ import {
     getScene2I,
     getScene2P, getScene3I, getScene3P, getScene4I, getScene4P, getScene5I, getScene5P
 } from "../../../utils/store/utils-store/utils-store-selectors.js";
+import {OrbitControls} from "@react-three/drei";
 const HomePage = ({night, setNight}) => {
 
     const [isRotating, setIsRotating] = useState(false);
@@ -66,7 +67,7 @@ const HomePage = ({night, setNight}) => {
                 near: .1,
                 far: 100,
             }} onCreated={canvasCreated}>
-
+                    <OrbitControls maxPolarAngle={Math.PI / 2} enablePan={false} enableZoom={false}/>
                     {/*<ambientLight intensity={.1}/>*/}
                     {!night ? <>
                         <directionalLight intensity={3}/>
