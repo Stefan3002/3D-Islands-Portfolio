@@ -34,6 +34,12 @@ const ProjectsPage = ({animation, setLastScroll}) => {
         },
         {
             title: 'Infocentre Automation'
+        },
+        {
+            title: 'Shop-n-all'
+        },
+        {
+            title: 'Mini Games'
         }
     ]
 

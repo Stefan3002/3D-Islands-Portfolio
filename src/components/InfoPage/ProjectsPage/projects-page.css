@@ -42,6 +42,12 @@
 .projects-page .project-section9 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #070F2B), url("../../../../public/imgs/infocentre-automation.jpg");
 }
+.projects-page .project-section10 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #070F2B), url("../../../../public/imgs/shopnall.png");
+}
+.projects-page .project-section11 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #070F2B), url("../../../../public/imgs/minigames.png");
+}
 .projects-page .project-section {
   cursor: pointer;
   text-align: center;

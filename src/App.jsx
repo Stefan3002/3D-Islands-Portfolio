@@ -26,7 +26,6 @@ import {
     setScene3I, setScene3P, setScene4I, setScene4P, setScene5I, setScene5P
 } from "../utils/store/utils-store/utils-store-actions.js";
 import {useDispatch} from "react-redux";
-import Premounter from "./components/Premounter/premounter.jsx";
 import {Canvas} from "@react-three/fiber";
 
 

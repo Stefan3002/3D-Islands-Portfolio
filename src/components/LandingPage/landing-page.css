@@ -26,6 +26,7 @@
   font-size: 1.2rem;
   background: #070F2B;
   color: wheat;
+  border: 1px solid #070F2B;
 }
 .landing-page .wrapper .start-button:focus, .landing-page .wrapper .start-button:hover {
   background: transparent;
