@@ -1,6 +1,5 @@
 import './project-template-page.css'
 
-import projectImg from '../../../../public/imgs/Codelighthouse.png'
 import {useEffect, useState} from "react";
 import LightBox from "../../LightBox/light-box.jsx";
 import closeSvg from "../../../../public/svgs/close.svg";
