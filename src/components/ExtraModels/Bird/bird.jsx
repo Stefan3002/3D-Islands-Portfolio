@@ -5,9 +5,14 @@ import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 import {useSelector} from "react-redux";
 import {getScene2P} from "../../../../utils/store/utils-store/utils-store-selectors.js";
+import birdGltf from "../../../assets/models/extra/phoenix_bird.glb";
 
 const Bird = ({...props}) => {
-    const birdNodes = useSelector(getScene2P)
+    let birdNodes = useSelector(getScene2P)
+
+    if(!birdNodes)
+        birdNodes = useGLTF(birdGltf)
+
     const {scene, animations} =  birdNodes
     const meshRef = useRef()
 

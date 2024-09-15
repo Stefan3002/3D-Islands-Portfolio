@@ -4,9 +4,14 @@ import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 import {useSelector} from "react-redux";
 import {getScene5P} from "../../../../utils/store/utils-store/utils-store-selectors.js";
+import plane4Gltf from "../../../assets/models/extra/model_plane.glb";
 
 const Plane4 = ({...props}) => {
-    const plane4Nodes = useSelector(getScene5P)
+    let plane4Nodes = useSelector(getScene5P)
+
+    if(!plane4Nodes)
+        plane4Nodes = useGLTF(plane4Gltf)
+
     const {scene, animations} = plane4Nodes
 
     const meshRef = useRef()

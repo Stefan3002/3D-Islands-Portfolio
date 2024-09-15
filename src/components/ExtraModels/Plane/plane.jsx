@@ -7,6 +7,10 @@ import {getScene1P} from "../../../../utils/store/utils-store/utils-store-select
 
 const Plane = ({...props}) => {
     const plane1Nodes = useSelector(getScene1P)
+
+    if(!plane1Nodes)
+        return null
+
     const meshRef = useRef()
     const {scene, animations} =  plane1Nodes
     const {actions} = useAnimations(animations, meshRef)

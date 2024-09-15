@@ -12,10 +12,15 @@ import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 import {useSelector} from "react-redux";
 import {getScene3P} from "../../../../utils/store/utils-store/utils-store-selectors.js";
+import plane2Gltf from "../../../assets/models/extra/dae_the_flying_circus_koi_fish.glb";
 
 
 const Plane2 = ({...props}) => {
-    const plane2Nodes = useSelector(getScene3P)
+    let plane2Nodes = useSelector(getScene3P)
+
+    if(!plane2Nodes)
+        plane2Nodes = useGLTF(plane2Gltf)
+
     const {animations,  nodes, materials} = plane2Nodes
     const meshRef = useRef()
     const group = useRef()

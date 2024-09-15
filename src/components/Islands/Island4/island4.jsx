@@ -12,10 +12,15 @@ import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 import {useSelector} from "react-redux";
 import {getScene4I} from "../../../../utils/store/utils-store/utils-store-selectors.js";
+import island4Gltf from "../../../assets/models/islands/low_poly_island (2).glb";
 
 
 const Island4 = ({scrollHandler, mesh, ...props}) => {
-    const island4Nodes = useSelector(getScene4I)
+    let island4Nodes = useSelector(getScene4I)
+
+    if(!island4Nodes)
+        island4Nodes = useGLTF(island4Gltf)
+
     const {nodes, materials, animations} = island4Nodes
     const { actions } = useAnimations(animations, mesh)
 

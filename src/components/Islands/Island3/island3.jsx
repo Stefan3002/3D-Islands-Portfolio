@@ -12,9 +12,14 @@ import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
 import {useSelector} from "react-redux";
 import {getScene3I} from "../../../../utils/store/utils-store/utils-store-selectors.js";
+import island3Gltf from "../../../assets/models/islands/low_poly_island (1).glb";
 
 const Island3 = ({scrollHandler, mesh, ...props}) => {
-    const island3Nodes = useSelector(getScene3I)
+    let island3Nodes = useSelector(getScene3I)
+
+    if(!island3Nodes)
+        island3Nodes = useGLTF(island3Gltf)
+
     const {nodes, materials} = island3Nodes
 
     const enlargementFactor = .5
