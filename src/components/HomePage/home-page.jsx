@@ -26,6 +26,7 @@ import {
     getScene2P, getScene3I, getScene3P, getScene4I, getScene4P, getScene5I, getScene5P
 } from "../../../utils/store/utils-store/utils-store-selectors.js";
 import {OrbitControls} from "@react-three/drei";
+import {uwbkPoint} from "../../../utils/responsiveness.js";
 const HomePage = ({night, setNight}) => {
 
     const [isRotating, setIsRotating] = useState(false);
@@ -38,24 +39,14 @@ const HomePage = ({night, setNight}) => {
     const scrollHandler = useRef()
     const [lastScroll, setLastScroll] = useState(0)
 
-    const [ready, setReady] = useState(false)
-    const spotLightRef = useRef()
-
     const canvasCreated = ({camera, viewport, gl}) => {
         camera.rotation.set(-.4,0,0)
         camera.position.set(0, 2, 4)
         gl.setPixelRatio(Math.min(window.devicePixelRatio, 2))
     }
-
-    useEffect(() => {
-        if(spotLightRef.current)
-            setReady(true)
-    }, [spotLightRef]);
-
-    useEffect(() => {
-        console.log('aaa', project)
-    }, [project])
-
+    let cameraFov = 75
+    if(window.innerWidth < uwbkPoint)
+        cameraFov = 75
 
     return (
         <div className='home-page'>
@@ -64,8 +55,9 @@ const HomePage = ({night, setNight}) => {
                 <Navigation scrollListener={scrollHandler.current} page={page} setPage={setPage} setNight={setNight} night={night} />
 
                 <Canvas className='slide-down-canvas' camera={{
-                near: .1,
-                far: 100,
+                    fov: cameraFov,
+                    near: .1,
+                    far: 10,
             }} onCreated={canvasCreated}>
                     <OrbitControls maxPolarAngle={Math.PI / 2} enablePan={false} enableZoom={false}/>
                     {/*<ambientLight intensity={.1}/>*/}
