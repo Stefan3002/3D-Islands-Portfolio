@@ -1,13 +1,15 @@
 import './listener.css'
-import {useFrame, useThree} from "@react-three/fiber";
-import {useEffect, useRef} from "react";
+import {invalidate, useFrame, useThree} from "@react-three/fiber";
+import {useEffect, useRef, useState} from "react";
 import {bkPoint} from "../../../utils/responsiveness.js";
 import {useSelector} from "react-redux";
+import { gsap } from "gsap";
+import {Vector3} from "three";
 import {getProject} from "../../../utils/store/utils-store/utils-store-selectors.js";
-const Listener = ({scrollHandlerRef, infoVisible, setInfoVisible, island, isRotating, setIsRotating}) => {
+const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible, island, isRotating, setIsRotating}) => {
     const {gl, viewport, camera} = useThree()
     const canvas = gl.domElement
-
+    const mouseIsDown = useRef(false)
     const project = useSelector(getProject)
 
     const lastPosition = useRef(0)
@@ -16,9 +18,57 @@ const Listener = ({scrollHandlerRef, infoVisible, setInfoVisible, island, isRota
     const lastScrollY = useRef(0)
     const dampingFactor = .9
 
+    const topNav = document.querySelector('.top-navigation')
+
+    // const [target, setTarget] = useState({
+    //     x: camera.rotation.x,
+    //     y: camera.rotation.y,
+    //     z: camera.rotation.z,
+    // })
+
+    const animateCameraToOrigin = () => {
+        const targetRotation = {
+            x: camera.rotation.x,
+            y: camera.rotation.y,
+            z: camera.rotation.z,
+        }
+        gsap.to(targetRotation, {
+            x: -.4,
+            y: 0,
+            z: 0,
+            duration: 1,
+            ease: "sine.in",
+            onUpdate: () => {
+                camera.rotation.set(targetRotation.x, targetRotation.y, targetRotation.z)
+            }
+        })
+        // DISABLE THEM TO NOT OVERWRITE YOUR SETTINGS ANYMORE!!!
+        orbitControls.current.enabled = false
+        gsap.to(camera.position, {
+            x: 0,
+            y: 2,
+            z: 4,
+            ease: "sine.in",
+            duration: 1
+        })
+
+        orbitControls.current.enabled = true
+        topNav.classList.remove('slide-up')
+    }
+
+
     const parallaxHandler = (e) => {
         e.preventDefault()
         e.stopPropagation()
+
+        // Dragged controllers
+        console.log(mouseIsDown.current)
+        if(mouseIsDown.current === true) {
+            topNav.classList.add('slide-up')
+            topNav.addEventListener('click', animateCameraToOrigin)
+        }
+
+
 
         if(!island || !island.current)
             return
@@ -63,7 +113,9 @@ const Listener = ({scrollHandlerRef, infoVisible, setInfoVisible, island, isRota
 
 
         if(scrollY > 50) {
-
+            topNav.classList.add('scroll-hide')
+            // No rotation manually
+            orbitControls.current.enabled = false
             // Remove the links from the navigation bar
             navUl?.classList.add('hidden')
 
@@ -124,6 +176,8 @@ const Listener = ({scrollHandlerRef, infoVisible, setInfoVisible, island, isRota
             // infoPage.classList.remove('slide-right')
         }
         else{
+            topNav.classList.remove('scroll-hide')
+            orbitControls.current.enabled = true
             nav.querySelector('.page-title').style.fontSize = ''
 
             nav.removeEventListener('mouseenter', mouseEnterHandler)
@@ -157,16 +211,38 @@ const Listener = ({scrollHandlerRef, infoVisible, setInfoVisible, island, isRota
             setInfoVisible(false)
         }
     }
+
+    const mouseDownHandler = (event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        mouseIsDown.current = true
+    }
+
+    const mouseUpHandler = (event) => {
+        event.preventDefault()
+        event.stopPropagation()
+        mouseIsDown.current = false
+        // topNav.removeEventListener('click', animateCameraToOrigin)
+    }
+
     useFrame(() => {
         // console.log(rotationSpeed.current)
         if(Math.abs(rotationSpeed.current) > 0){
             rotationSpeed.current *= dampingFactor
             island.current.rotation.y += rotationSpeed.current
         }
+        // console.log(target)
+        // console.log(target.y, target.y !== 0)
+        // if(target.y !== 0)
+        //     camera.rotation.set(target.x, target.y, target.z)
+
     });
     useEffect(() => {
         canvas.addEventListener('mousemove', parallaxHandler)
         window.addEventListener('scroll', scrollHandler)
+        canvas.addEventListener('mousedown', mouseDownHandler)
+        canvas.addEventListener('mouseup', mouseUpHandler)
+
         scrollHandlerRef.current = scrollHandler
         scrollHandler()
     }, []);

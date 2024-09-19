@@ -27,6 +27,7 @@ import {
 } from "../../../utils/store/utils-store/utils-store-selectors.js";
 import {OrbitControls} from "@react-three/drei";
 import {uwbkPoint} from "../../../utils/responsiveness.js";
+import TopNavigation from "../TopNavigation/top-navigation.jsx";
 const HomePage = ({night, setNight}) => {
 
     const [isRotating, setIsRotating] = useState(false);
@@ -47,11 +48,13 @@ const HomePage = ({night, setNight}) => {
     let cameraFov = 75
     if(window.innerWidth < uwbkPoint)
         cameraFov = 75
+    const orbitRef = useRef()
+
 
     return (
         <div className='home-page'>
-            {/*<LoadingScreen />*/}
             <Suspense fallback={<LoadingScreen />}>
+                <TopNavigation />
                 <Navigation scrollListener={scrollHandler.current} page={page} setPage={setPage} setNight={setNight} night={night} />
 
                 <Canvas className='slide-down-canvas' camera={{
@@ -59,7 +62,7 @@ const HomePage = ({night, setNight}) => {
                     near: .1,
                     far: 10,
             }} onCreated={canvasCreated}>
-                    <OrbitControls maxPolarAngle={Math.PI / 2} enablePan={false} enableZoom={false}/>
+                    <OrbitControls ref={orbitRef} maxPolarAngle={Math.PI / 2} enablePan={false} enableZoom={false}/>
                     {/*<ambientLight intensity={.1}/>*/}
                     {!night ? <>
                         <directionalLight intensity={3}/>
@@ -149,7 +152,7 @@ const HomePage = ({night, setNight}) => {
                                                 <Bird position={[0, 2, 0]} rotation={[0, 6.5, 0]} scale={[0, 0, 0]}/>
                                             </> : null
                     }
-                    <Listener scrollHandlerRef={scrollHandler} infoVisible={infoVisible} setInfoVisible={setInfoVisible}
+                    <Listener orbitControls={orbitRef} scrollHandlerRef={scrollHandler} infoVisible={infoVisible} setInfoVisible={setInfoVisible}
                               island={island} isRotating={isRotating} setIsRotating={setIsRotating}/>
 
             </Canvas>

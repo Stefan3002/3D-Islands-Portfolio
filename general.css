@@ -43,6 +43,10 @@ button {
   max-width: 1500px;
 }
 
+.scroll-hide {
+  display: none;
+}
+
 .close-btn {
   background: #FFAD05;
   border-radius: 10px;
