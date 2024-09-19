@@ -56,18 +56,17 @@ const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible,
         topNav.classList.remove('slide-up')
     }
 
-
-    const parallaxHandler = (e) => {
-        e.preventDefault()
-        e.stopPropagation()
-
+    const setRecenter = () => {
         // Dragged controllers
-        console.log(mouseIsDown.current)
         if(mouseIsDown.current === true) {
             topNav.classList.add('slide-up')
             topNav.addEventListener('click', animateCameraToOrigin)
         }
+    }
 
+    const parallaxHandler = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
 
 
         if(!island || !island.current)
@@ -238,10 +237,13 @@ const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible,
 
     });
     useEffect(() => {
-        canvas.addEventListener('mousemove', parallaxHandler)
+        canvas.addEventListener('mousemove', setRecenter)
+        canvas.addEventListener('touchmove', setRecenter)
         window.addEventListener('scroll', scrollHandler)
         canvas.addEventListener('mousedown', mouseDownHandler)
+        canvas.addEventListener('touchstart', mouseDownHandler)
         canvas.addEventListener('mouseup', mouseUpHandler)
+        canvas.addEventListener('touchend', mouseUpHandler)
 
         scrollHandlerRef.current = scrollHandler
         scrollHandler()
