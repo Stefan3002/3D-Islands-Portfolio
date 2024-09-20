@@ -6,6 +6,7 @@ import Button from "../Button/button.jsx";
 import OverlayCard from "./OverlayCard/overlay-card.jsx";
 import controllerSVG from '../../../public/svgs/controller.svg'
 import tvSVG from '../../../public/svgs/tv.svg'
+import {useEffect} from "react";
 const Overlay = () => {
     const clickable = useSelector(getClickable)
     const dispatch = useDispatch()
@@ -17,6 +18,13 @@ const Overlay = () => {
     const scrollDown = () => {
         window.scrollTo(0, 51)
     }
+
+    useEffect(() => {
+        if(night)
+            document.querySelector('.overlay-btn').classList.add('dark-btn')
+        else
+            document.querySelector('.overlay-btn').classList.remove('dark-btn')
+    }, [night]);
 
     switch (clickable){
         case 1:
@@ -40,7 +48,6 @@ const Overlay = () => {
                     })}
 
                 </div>
-
                 <Button text='See more' customClass='overlay-btn' callback={scrollDown}/>
             </div>
         default:

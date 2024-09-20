@@ -1,0 +1,37 @@
+.overlay-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #FFAD05;
+  width: 230px;
+  border-radius: 10px;
+  padding-top: 0.5rem;
+  transition: all 0.15s ease-in-out;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+}
+.overlay-card img {
+  max-width: 80px;
+}
+.overlay-card:hover, .overlay-card:focus {
+  box-shadow: none;
+  transition: all 0.15s ease-in-out;
+}
+.overlay-card .overlay-card-content {
+  padding: 0.5rem;
+}
+.overlay-card .overlay-card-content p {
+  font-weight: 300;
+}
+.overlay-card .overlay-card-content h3 {
+  margin: 0;
+}
+.overlay-card .overlay-card-highlight {
+  border-radius: 0 0 10px 10px;
+  background: #FCFF4B;
+  font-weight: bold;
+}
+.overlay-card .overlay-card-highlight p {
+  margin: 0;
+}
+
+/*# sourceMappingURL=overlay-card.css.map */

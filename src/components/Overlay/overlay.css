@@ -1,0 +1,44 @@
+.clickable-overlay {
+  overflow-y: auto;
+  position: fixed;
+  top: 0;
+  z-index: 90;
+  right: 0;
+  height: 100%;
+  width: 40%;
+  background: rgba(255, 173, 5, 0.5);
+  padding: 0.5rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.clickable-overlay .overlay-btn {
+  background: #FCFF4B;
+  margin-top: 1rem;
+  border-radius: 10px;
+  border: dashed 1px #070F2B;
+}
+.clickable-overlay .overlay-cards {
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+@media screen and (max-width: 1000px) {
+  .clickable-overlay {
+    display: inline;
+    z-index: 92;
+    bottom: 0;
+    top: unset;
+    height: 50%;
+    width: 100%;
+    background: #FFAD05;
+  }
+}
+
+/*# sourceMappingURL=overlay.css.map */

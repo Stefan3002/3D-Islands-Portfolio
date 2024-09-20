@@ -11,6 +11,12 @@ body {
   font-family: "SUSE", sans-serif;
 }
 
+.dark-btn {
+  background: #38182F !important;
+  color: wheat;
+  border: dashed 1px wheat;
+}
+
 .dark {
   background: linear-gradient(to right, #38182F, #5B2333);
 }
