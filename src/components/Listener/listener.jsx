@@ -2,16 +2,20 @@ import './listener.css'
 import {invalidate, useFrame, useThree} from "@react-three/fiber";
 import {useEffect, useRef, useState} from "react";
 import {bkPoint} from "../../../utils/responsiveness.js";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import { gsap } from "gsap";
 import {Vector3} from "three";
-import {getProject} from "../../../utils/store/utils-store/utils-store-selectors.js";
+import {getClickable, getProject, getScene1P} from "../../../utils/store/utils-store/utils-store-selectors.js";
+import plane from "../ExtraModels/Plane/plane.jsx";
+import {setClickable} from "../../../utils/store/utils-store/utils-store-actions.js";
 const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible, island, isRotating, setIsRotating}) => {
     const {gl, viewport, camera} = useThree()
     const canvas = gl.domElement
     const mouseIsDown = useRef(false)
+    const dragged = useRef(false)
     const project = useSelector(getProject)
 
+    const dispatch = useDispatch()
     const lastPosition = useRef(0)
     const lastPositionY = useRef(0)
     const rotationSpeed = useRef(0)
@@ -20,13 +24,57 @@ const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible,
 
     const topNav = document.querySelector('.top-navigation')
 
+    const clickable = useSelector(getClickable)
+    useEffect(() => {
+        console.log('ssss', clickable)
+        switch (clickable){
+            case 1:
+                orbitControls.current.enabled = false
+                // Plane1
+                if(dragged.current)
+                    animateCameraToOrigin(false)
+
+                gsap.to(orbitControls.current.target, {
+                    x: 0,
+                    y: 1.5,
+                    z: 0,
+                    duration: 1,
+                    ease: "sine.in",
+                })
+
+                gsap.to(camera.position, {
+                    duration: 1,
+                    z: 1,
+                    // y: 3,
+                    ease: "sine.in",
+                    delay: `${dragged.current ? 1 : 0}`,
+                })
+                break
+            case null:
+                animateCameraToOrigin()
+                break
+        }
+    }, [clickable]);
+
     // const [target, setTarget] = useState({
     //     x: camera.rotation.x,
     //     y: camera.rotation.y,
     //     z: camera.rotation.z,
     // })
 
-    const animateCameraToOrigin = () => {
+    const animateCameraToOrigin = (lookAtCenter = true) => {
+        // DISABLE THEM TO NOT OVERWRITE YOUR SETTINGS ANYMORE!!!
+        if(lookAtCenter) {
+            gsap.to(orbitControls.current.target, {
+                x: 0,
+                y: 0,
+                z: 0,
+                duration: 1,
+                ease: "sine.in",
+            })
+        }
+
+        orbitControls.current.enabled = false
         const targetRotation = {
             x: camera.rotation.x,
             y: camera.rotation.y,
@@ -42,8 +90,7 @@ const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible,
                 camera.rotation.set(targetRotation.x, targetRotation.y, targetRotation.z)
             }
         })
-        // DISABLE THEM TO NOT OVERWRITE YOUR SETTINGS ANYMORE!!!
-        orbitControls.current.enabled = false
+
         gsap.to(camera.position, {
             x: 0,
             y: 2,
@@ -51,6 +98,8 @@ const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible,
             ease: "sine.in",
             duration: 1
         })
+        dragged.current = false
+
 
         orbitControls.current.enabled = true
         topNav.classList.remove('slide-up')
@@ -59,6 +108,7 @@ const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible,
     const setRecenter = () => {
         // Dragged controllers
         if(mouseIsDown.current === true) {
+            dragged.current = true
             topNav.classList.add('slide-up')
             topNav.addEventListener('click', animateCameraToOrigin)
         }
@@ -98,7 +148,7 @@ const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible,
                 el.classList.add('hidden')
         })
     }
-
+    let singleAction = 1
     const scrollHandler = () => {
         const scrollY = window.scrollY
         const delta = scrollY - lastScrollY.current
@@ -110,8 +160,12 @@ const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible,
         lastScrollY.current = scrollY
 
 
-
         if(scrollY > 50) {
+            if(singleAction) {
+                dispatch(setClickable(null))
+                singleAction -= 1
+            }
+
             topNav.classList.add('scroll-hide')
             // No rotation manually
             orbitControls.current.enabled = false
@@ -174,7 +228,10 @@ const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible,
             // infoPage.classList.add('slide-left')
             // infoPage.classList.remove('slide-right')
         }
-        else{
+        else if(scrollY <= 50){
+            if(!singleAction)
+                singleAction++
+
             topNav.classList.remove('scroll-hide')
             orbitControls.current.enabled = true
             nav.querySelector('.page-title').style.fontSize = ''
@@ -184,7 +241,6 @@ const Listener = ({orbitControls, scrollHandlerRef, infoVisible, setInfoVisible,
             nav.removeEventListener('mouseleave', mouseExitHandler)
 
             // Add the links back to the navigation
-            console.log('aaaaaaa', project)
             if(project === null) {
                 navUl?.classList.remove('hidden')
             }

@@ -6,8 +6,9 @@ import {useGLTF} from "@react-three/drei";
 
 
 import {useEffect} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {
+    setNight,
     setScene2I,
     setScene2P,
     setScene3I,
@@ -15,12 +16,12 @@ import {
     setScene4I, setScene4P, setScene5I, setScene5P
 } from "../../../utils/store/utils-store/utils-store-actions.js";
 import Preloader from "../Preloader/preloader.jsx";
+import {getNight} from "../../../utils/store/utils-store/utils-store-selectors.js";
 
-const LandingPage = ({night, setNight, setStarted}) => {
+const LandingPage = ({setStarted}) => {
 
-
-
-
+    const dispatch = useDispatch()
+    const night = useSelector(getNight)
 
     const startJourney = () => {
         document.querySelector('.landing-title').classList.add('fade-out')
@@ -34,7 +35,7 @@ const LandingPage = ({night, setNight, setStarted}) => {
     }
 
     const goDark = () => {
-        setNight(!night)
+        dispatch(setNight(!night))
         if(!night)
             document.querySelector('body').classList.add('dark')
         else

@@ -7,13 +7,14 @@ Title: Low poly floating island
 */
 
 import React, {useEffect, useRef} from 'react'
-import {useGLTF, useProgress} from '@react-three/drei'
+import {Text, useGLTF, useProgress} from '@react-three/drei'
 import islandGLTF from '../../../assets/models/islands/low_poly_floating_island.glb'
 import { a } from '@react-spring/three'
 import {useFrame} from "@react-three/fiber";
 import {bkPoint} from "../../../../utils/responsiveness.js";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {getScene1I} from "../../../../utils/store/utils-store/utils-store-selectors.js";
+import {setClickable} from "../../../../utils/store/utils-store/utils-store-actions.js";
 
 const Island1 = ({scrollHandler, mesh, ...props}) => {
     // const islandRef = useRef()
@@ -62,6 +63,10 @@ const Island1 = ({scrollHandler, mesh, ...props}) => {
 
         scrollHandler()
     }, [scrollHandler])
+
+    const dispatch = useDispatch()
+
+
 
     return (
         <a.group {...props} dispose={null} ref={mesh}>

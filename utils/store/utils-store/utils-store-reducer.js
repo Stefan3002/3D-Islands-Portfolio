@@ -9,7 +9,10 @@ const INITIAL_VALUE = {
     scene4P: null,
     scene5I: null,
     scene5P: null,
-    project: null
+    project: null,
+    clickable: null,
+    night: false,
+    modal: null
 }
 
 const utilsReducer = (state = INITIAL_VALUE, action) => {
@@ -69,6 +72,21 @@ const utilsReducer = (state = INITIAL_VALUE, action) => {
             return {
                 ...state,
                 project: payload
+            }
+        case 'SET_CLICKABLE':
+            return {
+                ...state,
+                clickable: payload
+            }
+        case 'SET_NIGHT':
+            return {
+                ...state,
+                night: payload
+            }
+        case 'SET_MODAL':
+            return {
+                ...state,
+                modal: payload
             }
 
         default:

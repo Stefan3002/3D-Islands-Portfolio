@@ -2,12 +2,14 @@
 import {useAnimations, useGLTF} from "@react-three/drei";
 import {useEffect, useRef} from "react";
 import {useFrame} from "@react-three/fiber";
-import {useSelector} from "react-redux";
-import {getScene1P} from "../../../../utils/store/utils-store/utils-store-selectors.js";
+import {useDispatch, useSelector} from "react-redux";
+import {getClickable, getScene1P} from "../../../../utils/store/utils-store/utils-store-selectors.js";
+import {setClickable, setScene1P} from "../../../../utils/store/utils-store/utils-store-actions.js";
+import ClickableBox from "../../ClickableBox/clickable-box.jsx";
 
 const Plane = ({...props}) => {
     const plane1Nodes = useSelector(getScene1P)
-
+    const dispatch = useDispatch()
     if(!plane1Nodes)
         return null
 
@@ -20,6 +22,13 @@ const Plane = ({...props}) => {
     useEffect(() => {
         actions['Take 001'].play()
     }, []);
+
+    const scene1P = useSelector(getScene1P)
+    useEffect(() => {
+        if(scene1P === null && meshRef?.current)
+            dispatch(setScene1P(meshRef.current))
+        console.log(meshRef?.current?.position)
+    }, [meshRef])
 
     useFrame((state, delta) => {
 
@@ -40,8 +49,11 @@ const Plane = ({...props}) => {
             meshRef.current.scale.z += enlargementFactor * delta
     })
 
+
+
     return (
         <mesh ref={meshRef} {...props}>
+            <ClickableBox clickableIndex={1} />
             <primitive object={scene}>
 
             </primitive>

@@ -19,6 +19,7 @@ import ProjectsPage from "../InfoPage/ProjectsPage/projects-page.jsx";
 import ProjectPage from "../ProjectPage/project-page.jsx";
 import {useSelector} from "react-redux";
 import {
+    getClickable, getModal, getNight,
     getProject,
     getScene1I,
     getScene1P,
@@ -28,13 +29,17 @@ import {
 import {OrbitControls} from "@react-three/drei";
 import {uwbkPoint} from "../../../utils/responsiveness.js";
 import TopNavigation from "../TopNavigation/top-navigation.jsx";
-const HomePage = ({night, setNight}) => {
+import Overlay from "../Overlay/overlay.jsx";
+import Helper from "../Helper/helper.jsx";
+import Modal from "../Modal/modal.jsx";
+import Blur from "../../Blur/blur.jsx";
+const HomePage = ({}) => {
 
     const [isRotating, setIsRotating] = useState(false);
     const island = useRef()
     const [page, setPage] = useState(0)
     const [infoVisible, setInfoVisible] = useState(false)
-
+    const night = useSelector(getNight)
     const project = useSelector(getProject)
 
     const scrollHandler = useRef()
@@ -50,13 +55,17 @@ const HomePage = ({night, setNight}) => {
         cameraFov = 75
     const orbitRef = useRef()
 
-
+    const modal = useSelector(getModal)
+    const clickable = useSelector(getClickable)
+    console.log(modal)
     return (
         <div className='home-page'>
             <Suspense fallback={<LoadingScreen />}>
                 <TopNavigation />
-                <Navigation scrollListener={scrollHandler.current} page={page} setPage={setPage} setNight={setNight} night={night} />
-
+                <Helper />
+                {modal && <><Blur /><Modal /></>}
+                <Navigation scrollListener={scrollHandler.current} page={page} setPage={setPage} night={night} />
+                {clickable !== null && <Overlay />}
                 <Canvas className='slide-down-canvas' camera={{
                     fov: cameraFov,
                     near: .1,

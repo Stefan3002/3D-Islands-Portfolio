@@ -1,0 +1,38 @@
+@import '../../../utils/constants'
+
+.clickable-overlay
+  overflow-y: auto
+  position: fixed
+  top: 0
+  z-index: 90
+  right: 0
+  height: 100%
+  width: 40%
+  background: $bg-color-transp
+  padding: .5rem
+  border-radius: 10px
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: center
+  flex-direction: column
+  .overlay-btn
+    background: $bg-color2
+    margin-top: 1rem
+  .overlay-cards
+    gap: .5rem
+    flex-wrap: wrap
+    display: flex
+    justify-content: center
+    align-items: stretch
+
+
+@media screen and (max-width: $bk-point)
+  .clickable-overlay
+    display: inline
+    z-index: 92
+    bottom: 0
+    top: unset
+    height: 50%
+    width: 100%
+    background: $bg-color

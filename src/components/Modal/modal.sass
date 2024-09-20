@@ -1,0 +1,15 @@
+@import '../../../utils/constants'
+
+.modal
+  position: fixed
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  z-index: 102
+  background: $bg-color
+  padding: .5rem
+  border-radius: 10px
+
+@media screen and (max-width: $bk-point)
+  .modal
+    width: 80%

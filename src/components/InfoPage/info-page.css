@@ -32,8 +32,22 @@
 .info-page .scroll-svg {
   max-width: 50px;
   margin-top: 2rem;
+  animation-name: scroll-animate;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
 }
 
+@keyframes scroll-animate {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 @media screen and (max-width: 1000px) {
   .info-page {
     bottom: 0;

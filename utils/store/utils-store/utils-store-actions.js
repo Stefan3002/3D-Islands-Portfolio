@@ -64,3 +64,24 @@ export const setProject = (payload) => {
         payload
     }
 }
+
+export const setClickable = (payload) => {
+    return {
+        type: 'SET_CLICKABLE',
+        payload
+    }
+}
+
+export const setNight = (payload) => {
+    return {
+        type: 'SET_NIGHT',
+        payload
+    }
+}
+
+export const setModal = (payload) => {
+    return {
+        type: 'SET_MODAL',
+        payload
+    }
+}

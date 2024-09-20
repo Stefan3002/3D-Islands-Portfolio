@@ -9,3 +9,7 @@ export const getScene4P = (state) => state.utilsStore.scene4P
 export const getScene5I = (state) => state.utilsStore.scene5I
 export const getScene5P = (state) => state.utilsStore.scene5P
 export const getProject = (state) => state.utilsStore.project
+
+export const getClickable = (state) => state.utilsStore.clickable
+export const getNight = (state) => state.utilsStore.night
+export const getModal = (state) => state.utilsStore.modal

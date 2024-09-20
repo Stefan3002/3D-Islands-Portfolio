@@ -2,6 +2,7 @@
   background: transparent;
   padding: 0.5rem;
   transition: all 0.15s ease-in-out;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=button.css.map */
