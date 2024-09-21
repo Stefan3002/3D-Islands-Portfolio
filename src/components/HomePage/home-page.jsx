@@ -1,38 +1,32 @@
 import './home-page.css'
-import {Suspense, useEffect, useRef, useState} from "react";
+import {lazy, Suspense, useEffect, useRef, useState} from "react";
 import {Canvas, useThree} from '@react-three/fiber'
 import Island1 from "../Islands/Island1/island1.jsx";
 import LoadingScreen from "../LoadingScreen/loading-screen.jsx";
 import Listener from "../Listener/listener.jsx";
 import Navigation from "../Navigation/navigation.jsx";
-import InfoPage from "../InfoPage/info-page.jsx";
-import Island2 from "../Islands/Island2/island2.jsx";
+const InfoPage = lazy(() => import("../InfoPage/info-page.jsx"))
+const Island2 = lazy(() => import("../Islands/Island2/island2.jsx"))
 import Plane from "../ExtraModels/Plane/plane.jsx";
-import Bird from "../ExtraModels/Bird/bird.jsx";
-import Island3 from "../Islands/Island3/island3.jsx";
-import Plane2 from "../ExtraModels/Plane2/plane2.jsx";
-import Island4 from "../Islands/Island4/island4.jsx";
-import Plane3 from "../ExtraModels/Plane3/plane3.jsx";
-import Island5 from "../Islands/Island5/island5.jsx";
-import Plane4 from "../ExtraModels/Plane4/plane4.jsx";
-import ProjectsPage from "../InfoPage/ProjectsPage/projects-page.jsx";
-import ProjectPage from "../ProjectPage/project-page.jsx";
+const Bird = lazy(() => import("../ExtraModels/Bird/bird.jsx"))
+const Island3= lazy(() => import("../Islands/Island3/island3.jsx"))
+const Plane2 = lazy(() => import("../ExtraModels/Plane2/plane2.jsx"))
+const Island4 = lazy(() => import("../Islands/Island4/island4.jsx"))
+const Island5 = lazy(() => import("../Islands/Island5/island5.jsx"))
+const Plane4 = lazy(() => import("../ExtraModels/Plane4/plane4.jsx"))
+const ProjectPage = lazy(() => import("../ProjectPage/project-page.jsx"))
 import {useSelector} from "react-redux";
 import {
     getClickable, getModal, getNight,
     getProject,
-    getScene1I,
-    getScene1P,
-    getScene2I,
-    getScene2P, getScene3I, getScene3P, getScene4I, getScene4P, getScene5I, getScene5P
-} from "../../../utils/store/utils-store/utils-store-selectors.js";
-import {OrbitControls} from "@react-three/drei";
+} from "../../../utils/store/utils-store/utils-store-selectors.js"
+import {OrbitControls} from "@react-three/drei"
 import {uwbkPoint} from "../../../utils/responsiveness.js";
-import TopNavigation from "../TopNavigation/top-navigation.jsx";
-import Overlay from "../Overlay/overlay.jsx";
-import Helper from "../Helper/helper.jsx";
-import Modal from "../Modal/modal.jsx";
-import Blur from "../../Blur/blur.jsx";
+import TopNavigation from "../TopNavigation/top-navigation.jsx"
+import Overlay from "../Overlay/overlay.jsx"
+import Helper from "../Helper/helper.jsx"
+const Modal = lazy(() => import("../Modal/modal.jsx"))
+const Blur = lazy(() => import("../../Blur/blur.jsx"))
 const HomePage = ({}) => {
 
     const [isRotating, setIsRotating] = useState(false);
