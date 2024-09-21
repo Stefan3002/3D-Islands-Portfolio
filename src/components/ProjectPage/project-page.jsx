@@ -60,7 +60,6 @@ import img93 from '/imgs/project10/shopnall3.webp'
 import img101 from '/imgs/project11/minigames1.webp'
 
 import ProjectTemplatePage from "./ProjectTemplatePage/project-template-page.jsx";
-import {useEffect, useState} from "react";
 import {projectsInfo} from "../../../utils/info/projectsInfo.js";
 const ProjectPage = ({lastScroll, project}) => {
     let imgs, description, title, cover

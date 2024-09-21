@@ -12,9 +12,7 @@ const Bird = lazy(() => import("../ExtraModels/Bird/bird.jsx"))
 const Island3= lazy(() => import("../Islands/Island3/island3.jsx"))
 const Plane2 = lazy(() => import("../ExtraModels/Plane2/plane2.jsx"))
 const Island4 = lazy(() => import("../Islands/Island4/island4.jsx"))
-const Island5 = lazy(() => import("../Islands/Island5/island5.jsx"))
-const Plane4 = lazy(() => import("../ExtraModels/Plane4/plane4.jsx"))
-const ProjectPage = lazy(() => import("../ProjectPage/project-page.jsx"))
+import ProjectPage from "../ProjectPage/project-page.jsx"
 import {useSelector} from "react-redux";
 import {
     getClickable, getModal, getNight,
@@ -25,6 +23,8 @@ import {uwbkPoint} from "../../../utils/responsiveness.js";
 import TopNavigation from "../TopNavigation/top-navigation.jsx"
 import Overlay from "../Overlay/overlay.jsx"
 import Helper from "../Helper/helper.jsx"
+const Page3 = lazy(() => import("../Pages/Page3/page3.jsx"))
+const Page4 = lazy(() => import("../Pages/Page4/page4.jsx"))
 const Modal = lazy(() => import("../Modal/modal.jsx"))
 const Blur = lazy(() => import("../../Blur/blur.jsx"))
 const HomePage = ({}) => {
@@ -135,20 +135,9 @@ const HomePage = ({}) => {
                                              rotation={[0, 0, 0]}/>
                                     <Plane2 scale={[0, 0, 0]} position={[-.2, 2.3, 0]} rotation={[0, -21, 0]}/>
                                 </> : page === 3 ?
-                                    <>
-                                        {/*<pointLight intensity={2.5} position={[-2, 1, 0]}/>*/}
-                                        <Island4 scrollHandler={scrollHandler.current} mesh={island} position={[-.2, 1, 0]} scale={[0, 0, 0]}
-                                                 rotation={[0, -.5, 0]}/>
-                                        <Plane2 scale={[0, 0, 0]} position={[-.2, 2.1, 0]} rotation={[0, -21, 0]}/>
-
-                                        {/*<Plane3 scale={[0, 0, 0]} rotation={[0, 4, 0]} position={[-.2, 2, 0]}/>*/}
-                                    </> : page === 4 ?
-                                        <>
-                                            {/*<pointLight intensity={2.5} position={[-2, 1, 0]}/>*/}
-                                            <Island5 scrollHandler={scrollHandler.current} mesh={island} position={[-.2, .4, 0]} scale={[0, 0, 0]}
-                                                     rotation={[0, -4, 0]}/>
-                                            <Plane4 scale={[0, 0, 0]} position={[-.2, 2, 0]} rotation={[0, 2.5, 0]}/>
-                                        </> : page === 5 ?
+                                    <Page3 lastScroll={lastScroll} island={island} scrollHandler={scrollHandler} /> : page === 4 ?
+                                        <Page4 scrollHandler={scrollHandler} island={island}/>
+                                        : page === 5 ?
                                             <>
                                                 <pointLight intensity={2.5} position={[0, 1, 0]}/>
                                                 <Island1 scrollHandler={scrollHandler.current} mesh={island} position={[0, 0, 0]} scale={[0, 0, 0]} rotation={[0, -2, 0]}/>
@@ -161,6 +150,7 @@ const HomePage = ({}) => {
             </Canvas>
                 {infoVisible && project === null && <InfoPage setLastScroll={setLastScroll} project={project} scrollHandler={scrollHandler.current} page={page} />}
                 {project !== null && <ProjectPage lastScroll={lastScroll} project={project} />}
+
             </Suspense>
 
         </div>
