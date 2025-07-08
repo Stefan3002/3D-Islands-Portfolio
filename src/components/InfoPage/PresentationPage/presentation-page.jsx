@@ -17,7 +17,7 @@ const PresentationPage = ({animation}) => {
             </div>
             <div className="about-highs wrapper">
                 <div className='about-high about-high1'>
-                    <p className='about-high-value'>21</p>
+                    <p className='about-high-value'>22</p>
                     <p className='about-high-key'>Age</p>
                 </div>
                 <div className='about-high about-high1'>
@@ -29,7 +29,7 @@ const PresentationPage = ({animation}) => {
                     <p className='about-high-key'>Student</p>
                 </div>
                 <div className='about-high about-high1'>
-                    <p className='about-high-value'>Web admin</p>
+                    <p className='about-high-value'>Web Dev</p>
                     <p className='about-high-key'>Role</p>
                 </div>
 
@@ -41,10 +41,9 @@ const PresentationPage = ({animation}) => {
                         goosebumps
                         is programming the Web and bending it to my will. I started learning Web technologies
                         in <span className="high">2021</span> on my first faculty year. Since then I learned a lot
-                        about how the Web works, finished my <span className="high">Bachelor's studies</span> and
-                        got admitted for my Master's ones.
-                        I became a Web administrator for my faculty where I mainly work in Wordpress to facilitate
-                        easy access to the website, but I have never forgotten the true definition of Web
+                        about how the Web works, finished my <span className="high">Bachelor's studies</span> and published <span className="high">academic research</span> in renounced, international, conferences.
+                        I became a Web developer for my faculty where I facilitate performant,
+                        easily accessible websites, while keeping in mind the true definition of Web
                         development: <span className="high">programming</span>. This is why I also created apps
                         using React Js and JavaScript for other faculty-related projects.
                     </p>
@@ -53,18 +52,13 @@ const PresentationPage = ({animation}) => {
                     <h3 className='about-section-title'>How it's going</h3>
                     <p className='about-section-body'>
                         I am a working towards my Master's degree in <span className="high">Artificial Intelligence and Distributed Computing</span>,
-                        a direction a bit different from the Web technologies that I am used to. I ended up choosing
-                        this
-                        Master direction because of my dream of becoming a <span
-                        className="high">university teacher</span> and doing research work as AI would allow me to enter
-                        the research field with ease.
+                        a direction a bit different from the Web technologies that I am used to. This is because I am always eager to widen my skills in various technology areas.
                     </p>
                 </div>
                 <div className="about-section">
-                    <h3 className='about-section-title'>How I hope it will go</h3>
+                    <h3 className='about-section-title'>The future</h3>
                     <p className='about-section-body'>
-                        I hope I will someday be a university teacher to be able to <span className="high">share my passion</span> for
-                        the Web with other students.
+                        I intend to broaden my knowledge in the Web technologies area, while also exploring new technologies. Learning is a never-ending process and I am always looking for new challenges.
                     </p>
                 </div>
                 <a href="#top"><img src={ArrowUp} alt="" className="return-top"/></a>

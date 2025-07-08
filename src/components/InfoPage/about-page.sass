@@ -34,7 +34,8 @@
     font-weight: 200
   .about-highs
     display: flex
-    justify-content: space-between
+    flex-wrap: wrap
+    justify-content: center
     gap: 1rem
     align-items: stretch
   .about-high
@@ -58,8 +59,13 @@
     font-size: 2rem
 
 
-@media screen and (max-width: $bk-point)
+//@media screen and (max-width: $bk-point)
+//  .about-page
+//    .about-highs
+//      flex-wrap: wrap
+//      justify-content: center
+
+@media screen and (min-width: $uwbk-point)
   .about-page
     .about-highs
-      flex-wrap: wrap
-      justify-content: center
+      justify-content: space-between

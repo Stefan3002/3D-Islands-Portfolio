@@ -37,7 +37,8 @@
 }
 .about-page .about-highs {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
   align-items: stretch;
 }
@@ -64,10 +65,9 @@
   font-size: 2rem;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (min-width: 2000px) {
   .about-page .about-highs {
-    flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
   }
 }
 

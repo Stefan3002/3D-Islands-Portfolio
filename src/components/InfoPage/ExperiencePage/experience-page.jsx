@@ -17,16 +17,16 @@ const ExperiencePage = ({animation}) => {
             </div>
             <div className="about-highs wrapper">
             <div className='about-high about-high1'>
-                    <p className='about-high-value'>Web admin</p>
+                    <p className='about-high-value'>Web Dev</p>
                     <p className='about-high-key'>WUT</p>
                 </div>
-                <div className='about-high about-high1'>
-                    <p className='about-high-value'>Student member</p>
-                    <p className='about-high-key'>RSMI</p>
-                </div>
+                {/*<div className='about-high about-high1'>*/}
+                {/*    <p className='about-high-value'>Student member</p>*/}
+                {/*    <p className='about-high-key'>RSMI</p>*/}
+                {/*</div>*/}
                 <div className='about-high about-high1'>
                     <p className='about-high-value'>Freelancer</p>
-                    <p className='about-high-key'>Ora lui Robert</p>
+                    <p className='about-high-key'>Ora lui Robert and more</p>
                 </div>
                 <div className='about-high about-high1'>
                     <p className='about-high-value'>Web dev</p>
@@ -38,14 +38,14 @@ const ExperiencePage = ({animation}) => {
                 <div className="about-section">
                     <h3 className='about-section-title'>Web admin @ WUT IMF</h3>
                     <p className='about-section-body'>
-                        Since May 2023 I am the <span className="high">Web administrator</span> of the Faculty of Mathematics and Computer Science, West University of Timișoara.
+                        Since May 2023 I am the <span className="high">Web Developer</span> of the Faculty of Mathematics and Computer Science, West University of Timișoara.
                         I have administrated, developed, changed, modified the websites of the faculty since then. This position also allowed me to participate in many other projects, contests, conferences as a member of the <span className="high">organising committees.</span>
                     </p>
                 </div>
                 <div className="about-section">
                     <h3 className='about-section-title'>Freelancing</h3>
                     <p className='about-section-body'>
-                        I also got a taste of the freelancing industry by developing the official <span className="high"><a
+                        I am also doing freelancing to widen my industry skills by developing the official <span className="high"><a
                         href="https://oraluirobert.com/">"Ora lui Robert"</a></span> NGO website.
                     </p>
                 </div>
