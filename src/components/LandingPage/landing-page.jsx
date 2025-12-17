@@ -51,7 +51,7 @@ const LandingPage = ({setStarted}) => {
             <div className='landing-page'>
                 <section className="wrapper">
                     <h1 className='landing-title'>Ștefan Secrieru</h1>
-                    <p className='landing-description'>Master student and Web Developer. Web technologies are my passion.</p>
+                    <p className='landing-description'>Software Engineer.</p>
                     {/*<h2 className='landing-catch'>How about you explore my life?</h2>*/}
                     <div className="color-scheme-landing">
                         <img className='scheme-option' src={sunSVG} onClick={() => changeColorScheme()}/>

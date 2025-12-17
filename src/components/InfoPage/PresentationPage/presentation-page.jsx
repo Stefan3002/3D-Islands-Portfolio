@@ -25,11 +25,11 @@ const PresentationPage = ({animation}) => {
                     <p className='about-high-key'>Nationality</p>
                 </div>
                 <div className='about-high about-high1'>
-                    <p className='about-high-value'>Master</p>
-                    <p className='about-high-key'>Student</p>
+                    <p className='about-high-value'>Researcher</p>
+                    <p className='about-high-key'>Expertise</p>
                 </div>
                 <div className='about-high about-high1'>
-                    <p className='about-high-value'>Web Dev</p>
+                    <p className='about-high-value'>Software Engineer</p>
                     <p className='about-high-key'>Role</p>
                 </div>
 
@@ -42,7 +42,7 @@ const PresentationPage = ({animation}) => {
                         is programming the Web and bending it to my will. I started learning Web technologies
                         in <span className="high">2021</span> on my first faculty year. Since then I learned a lot
                         about how the Web works, finished my <span className="high">Bachelor's studies</span> and published <span className="high">academic research</span> in renounced, international, conferences.
-                        I became a Web developer for my faculty where I facilitate performant,
+                        I worked as a Web developer for my faculty where I facilitated performant,
                         easily accessible websites, while keeping in mind the true definition of Web
                         development: <span className="high">programming</span>. This is why I also created apps
                         using React Js and JavaScript for other faculty-related projects.
@@ -56,9 +56,21 @@ const PresentationPage = ({animation}) => {
                     </p>
                 </div>
                 <div className="about-section">
-                    <h3 className='about-section-title'>The future</h3>
+                    <h3 className='about-section-title'>My Role at Canonical</h3>
                     <p className='about-section-body'>
-                        I intend to broaden my knowledge in the Web technologies area, while also exploring new technologies. Learning is a never-ending process and I am always looking for new challenges.
+                        As a <span className="high">Software Engineer</span> at <span className="high">Canonical</span> in the <span className="high">Web Department</span>, I am responsible for developing, maintaining, and optimizing web applications and services that support Canonical's global presence. My work focuses on delivering high-quality, scalable, and accessible web solutions that align with the company's mission and standards.
+                    </p>
+                </div>
+                <div className="about-section">
+                    <h3 className='about-section-title'>My Journey</h3>
+                    <p className='about-section-body'>
+                        My journey to Canonical began with a passion for web technologies and a drive to create impactful digital experiences. After earning my Bachelor's degree and contributing to academic research, I honed my skills through various projects and roles. This path led me to join Canonical, where I now apply my expertise to real-world challenges in a dynamic, collaborative environment.
+                    </p>
+                </div>
+                <div className="about-section">
+                    <h3 className='about-section-title'>Looking Forward</h3>
+                    <p className='about-section-body'>
+                        At Canonical, I am committed to continuous learning and professional growth. I aim to further enhance my technical skills, contribute to innovative web solutions, and support the ongoing success of the Web Department. I look forward to tackling new challenges and making a meaningful impact within the company and the broader open-source community.
                     </p>
                 </div>
                 <a href="#top"><img src={ArrowUp} alt="" className="return-top"/></a>

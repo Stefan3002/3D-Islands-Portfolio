@@ -17,29 +17,34 @@ const ExperiencePage = ({animation}) => {
             </div>
             <div className="about-highs wrapper">
             <div className='about-high about-high1'>
-                    <p className='about-high-value'>Web Dev</p>
-                    <p className='about-high-key'>WUT</p>
+                    <p className='about-high-value'>Software Engineer</p>
+                    <p className='about-high-key'>Canonical</p>
                 </div>
                 {/*<div className='about-high about-high1'>*/}
                 {/*    <p className='about-high-value'>Student member</p>*/}
                 {/*    <p className='about-high-key'>RSMI</p>*/}
                 {/*</div>*/}
-                <div className='about-high about-high1'>
-                    <p className='about-high-value'>Freelancer</p>
-                    <p className='about-high-key'>Ora lui Robert and more</p>
-                </div>
-                <div className='about-high about-high1'>
-                    <p className='about-high-value'>Web dev</p>
-                    <p className='about-high-key'>AiRobo-Erasmus+</p>
-                </div>
+                {/*<div className='about-high about-high1'>*/}
+                {/*    <p className='about-high-value'>Freelancer</p>*/}
+                {/*    <p className='about-high-key'>Ora lui Robert and more</p>*/}
+                {/*</div>*/}
+                {/*<div className='about-high about-high1'>*/}
+                {/*    <p className='about-high-value'>Web dev</p>*/}
+                {/*    <p className='about-high-key'>AiRobo-Erasmus+</p>*/}
+                {/*</div>*/}
 
             </div>
             <div className="about-page-bottom info-page-bottom wrapper">
                 <div className="about-section">
+                    <h3 className='about-section-title'>Software Engineer @ Canonical</h3>
+                    <p className='about-section-body'>
+                        Since October 2025, I have been working as a <span className="high">Software Engineer</span> in the <span className="high">Web Department</span> at Canonical. My responsibilities include developing, maintaining, and optimizing web applications and services that support Canonical's global presence. I collaborate with talented professionals to deliver high-quality, scalable, and accessible web solutions that align with Canonical's mission and standards.
+                    </p>
+                </div>
+                <div className="about-section">
                     <h3 className='about-section-title'>Web admin @ WUT IMF</h3>
                     <p className='about-section-body'>
-                        Since May 2023 I am the <span className="high">Web Developer</span> of the Faculty of Mathematics and Computer Science, West University of Timișoara.
-                        I have administrated, developed, changed, modified the websites of the faculty since then. This position also allowed me to participate in many other projects, contests, conferences as a member of the <span className="high">organising committees.</span>
+                        From May 2023 to 2025, I was the <span className="high">Web Developer</span> of the Faculty of Mathematics and Computer Science, West University of Timișoara. I administrated, developed, and maintained the faculty's websites, and participated in various projects, contests, and conferences as a member of the <span className="high">organising committees</span>.
                     </p>
                 </div>
                 <div className="about-section">
