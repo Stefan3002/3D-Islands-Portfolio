@@ -120,6 +120,11 @@ const ProjectPage = ({lastScroll, project}) => {
             description = projectsInfo[10]
             title = 'Mini Games'
             break
+        case 11:
+            imgs = []
+            description = projectsInfo[11]
+            title = 'A11y Remediation & Engineering Advocacy'
+            break
 
     }
 

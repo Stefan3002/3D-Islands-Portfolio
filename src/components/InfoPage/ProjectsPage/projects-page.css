@@ -48,6 +48,9 @@
 .projects-page .project-section11 {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #070F2B), url("../../../../public/imgs/minigames.webp");
 }
+.projects-page .project-section12 {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #070F2B), url("../../../../public/imgs/project12/a11y.webp");
+}
 .projects-page .project-section {
   cursor: pointer;
   text-align: center;

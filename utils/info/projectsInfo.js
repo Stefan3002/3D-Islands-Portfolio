@@ -273,5 +273,20 @@ I created another script for automating the process of verifying the date of the
                 <ul>
                 <li><a href="https://tictacgame.stefansecrieru.com">Tic Tac Toe Game</a> - My solution for <a href="https://www.freecodecamp.org/learn/coding-interview-prep/take-home-projects/build-a-tic-tac-toe-game">this</a> freeCodeCamp challenge. </li>
 </ul>
-            `
+            `,
+    `   <p>
+    At <span className="high">Canonical</span>, I have been championing <span className="high">web accessibility (a11y)</span> across enterprise cloud interfaces, treating digital inclusion as a core architectural constraint rather than an afterthought.
+</p>
+<p>
+    My work on the <span className="high">Anbox Cloud Dashboard</span> focuses on implementing robust WAI-ARIA standards, comprehensive keyboard navigation, and predictable focus management across complex, real-time cloud management workflows.
+</p>
+<p>
+    To make accessibility resilient and scalable across the engineering lifecycle, I introduced a <span className="high">Shift-Left</span> testing strategy—integrating automated audits using <span className="high">axe-core</span> directly into CI/CD pipelines. This ensures regressions are caught early at the pull request level rather than reaching production.
+</p>
+<p>
+    Beyond shipping accessible components, I actively drive internal awareness by delivering technical sessions on a11y best practices and defensive UI patterns. This cross-team impact and proactive ownership earned me a <span className="high">Canonical Recognition Award</span>.
+</p>
+<p>
+    Keywords: web accessibility (a11y), WAI-ARIA, design systems, automated testing, axe-core, CI/CD, React, TypeScript.
+</p>`
 ]

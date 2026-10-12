@@ -2,6 +2,19 @@ import './presentation-page.css'
 import Button from "../../Button/button.jsx";
 import ArrowUp from "../../../../public/svgs/arrow-up.svg";
 import scrollSVG from "../../../../public/svgs/scroll.svg";
+
+const calculateAge = () => {
+    const today = new Date();
+    const birthday = new Date(today.getFullYear(), 11, 30);
+    let age = today.getFullYear() - 2002;
+
+    if (today < birthday) {
+        age -= 1;
+    }
+
+    return age;
+};
+
 const PresentationPage = ({animation}) => {
     return (
         <div className={`about-page ${animation} info-page`}>
@@ -17,7 +30,7 @@ const PresentationPage = ({animation}) => {
             </div>
             <div className="about-highs wrapper">
                 <div className='about-high about-high1'>
-                    <p className='about-high-value'>22</p>
+                    <p className='about-high-value'>{calculateAge()}</p>
                     <p className='about-high-key'>Age</p>
                 </div>
                 <div className='about-high about-high1'>
@@ -51,8 +64,8 @@ const PresentationPage = ({animation}) => {
                 <div className="about-section">
                     <h3 className='about-section-title'>How it's going</h3>
                     <p className='about-section-body'>
-                        I am a working towards my Master's degree in <span className="high">Artificial Intelligence and Distributed Computing</span>,
-                        a direction a bit different from the Web technologies that I am used to. This is because I am always eager to widen my skills in various technology areas.
+                        I completed my Master's degree in <span className="high">Artificial Intelligence and Distributed Computing</span>.
+                        Bridging this domain with web architecture, I authored a research paper on composable clinical intelligence published at <span className="high">ICSEng</span>, focusing on bringing predictive widgets into EHR systems with the same architectural rigor I apply to UI engineering.
                     </p>
                 </div>
                 <div className="about-section">

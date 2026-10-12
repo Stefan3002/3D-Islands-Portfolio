@@ -62,5 +62,41 @@
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #070F2B), url("../../../../public/imgs/design.webp");
   background-position: center;
 }
+.skills-page .recommendations-section {
+  margin-top: 3rem;
+}
+.skills-page .recommendations-section .about-section-title {
+  text-align: center;
+}
+.skills-page .recommendation {
+  max-width: 800px;
+  margin: 1.5rem auto 0;
+  padding: 1.5rem;
+  border-left: 3px solid #070F2B;
+  border-radius: 0 10px 10px 0;
+  background: rgba(255, 255, 255, 0.05);
+}
+.skills-page .recommendation-quote {
+  margin: 0;
+  font-weight: 200;
+}
+.skills-page .recommendation-quote p {
+  margin: 0 0 1rem;
+}
+.skills-page .recommendation-quote p:last-child {
+  margin-bottom: 1.5rem;
+}
+.skills-page .recommendation-author,
+.skills-page .recommendation-role {
+  margin: 0;
+}
+.skills-page .recommendation-author {
+  font-weight: 900;
+}
+.skills-page .recommendation-role {
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  font-weight: 200;
+}
 
 /*# sourceMappingURL=skills-page.css.map */

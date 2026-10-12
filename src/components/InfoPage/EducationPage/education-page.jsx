@@ -15,13 +15,9 @@ const EducationPage = ({animation}) => {
                 <img src={scrollSVG} alt="" className="scroll-svg"/>
             </div>
             <div className="about-highs wrapper">
-            <div className='about-high about-high1'>
-                    <p className='about-high-value'>Bachelor's</p>
-                    <p className='about-high-key'>Last degree</p>
-                </div>
                 <div className='about-high about-high1'>
                     <p className='about-high-value'>Master</p>
-                    <p className='about-high-key'>Ongoing degree</p>
+                    <p className='about-high-key'>Degree</p>
                 </div>
                 <div className='about-high about-high1'>
                     <p className='about-high-value'>Student</p>

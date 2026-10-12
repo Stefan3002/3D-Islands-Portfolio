@@ -40,6 +40,9 @@ const ProjectsPage = ({animation, setLastScroll}) => {
         },
         {
             title: 'Mini Games'
+        },
+        {
+            title: 'A11y Remediation & Engineering Advocacy'
         }
     ]
 
@@ -74,12 +77,17 @@ const ProjectsPage = ({animation, setLastScroll}) => {
                     <p className='about-high-value'>Web application</p>
                     <p className='about-high-key'>Bachelor's thesis</p>
                 </div>
+                <div className='about-high about-high1'>
+                    <p className='about-high-value'>Web+Health Research</p>
+                    <p className='about-high-key'>Master's thesis</p>
+                </div>
 
             </div>
             <div className="about-page-bottom info-page-bottom wrapper">
                 <div className="projects-page-bottom">
-                    {projects.map((project, index) => {
-                        return <div onClick={() => openProject(index)} className={`about-section project-section project-section${index + 1}`}>
+                    {projects.map((project, index) => ({project, index})).reverse().map(({project, index}, displayIndex) => {
+                        const sectionIndex = projects.length - displayIndex
+                        return <div key={project.title} onClick={() => openProject(index)} className={`about-section project-section project-section${sectionIndex}`}>
                             <span className="about-section-bg"/>
                             <p className="about-section-title">{project.title}</p>
                         </div>
